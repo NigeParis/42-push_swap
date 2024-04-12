@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 14:51:50 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/12 08:56:22 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/12 16:44:04 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (lst == NULL || del == NULL)
+	if (!lst || !del)
 		return ;
-	del(lst -> content);
-	free(lst);
+	del (lst -> content);
+ //	free(lst);
+	lst = NULL;
 }
