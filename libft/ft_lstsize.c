@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 10:16:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/24 23:28:48 by nrobinso         ###   ########.fr       */
+/*   Created: 2023/11/24 09:41:56 by nrobinso          #+#    #+#             */
+/*   Updated: 2024/04/12 08:54:43 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/**
-* ft_lstlast
+
+/** ft_lstsize
 *
-* t_list *ft_lstlast(t_list *lst);
+* int ft_lstsize(t_list *lst);
 *
-* Description: Returns the last node of the list.
+* Description: Counts the number of nodes in a list
 *
-* Parameters: lst: The beginning of the list.
+* Parameters : lst: The beginning of the list.
 *
-* Return value: Last node of the list
-*
+* Note : while(lst) - work because lst -> next adresse exists 
+*                                         (no need to increment)
 **/
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
+	int	size;
+
 	if (lst == NULL)
 		return (0);
-	while (lst -> next)
+	size = 0;
+	while (lst)
 	{
 		lst = lst -> next;
+		size++;
 	}
-	return (lst);
+	return (size);
 }

@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/12 08:06:49 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/12 08:41:58 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,17 @@
 # include "../ft_printf/src/ft_printf.h"
 # include "../get_next_line/get_next_line_bonus.h"
 
-typedef struct s_pushswap
+typedef struct s_a
 {
 	int		i;
 
-}	t_pushswap;
+}	t_a;
 
+typedef struct s_b
+{
+	int		i;
+
+}	t_b;
 
 
 #endif

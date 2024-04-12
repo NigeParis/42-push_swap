@@ -32,9 +32,9 @@ SRC+=ft_free_tab.c
 SRC+=ft_strlen.c
 SRC+=ft_strcmp.c
 
-BONUS=ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c
-BONUS+=ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c
-BONUS+=ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+BONUS=ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
+BONUS+=ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c
+BONUS+=ft_lstclear.c ft_lstiter.c ft_lstmap.c
 HEADER=libft.h
 ###############################################################################
 ## RULES

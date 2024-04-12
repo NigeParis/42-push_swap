@@ -43,7 +43,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "Creating FILE .......\n"
-	@make -C ./libft/ all
+	@make -C ./libft/ bonus
 	@make -C ./ft_printf/ all
 	@make -C ./get_next_line/ all
 	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(FT_PRINTF) $(GET_NEXT_LINE)
@@ -56,7 +56,7 @@ bonus: $(BONUS)
 
 $(BONUS): $(BONUS_OBJ)
 	@echo "Creating FILE .......\n"
-	@make -C ./libft/ all
+	@make -C ./libft/ bonus
 	@make -C ./ft_printf/ all
 	@make -C ./get_next_line/ all
 	@$(CC) $(CFLAGS) -o $(BONUS) $(BONUS_OBJ) $(LIBFT) $(FT_PRINTF) $(GET_NEXT_LINE)
