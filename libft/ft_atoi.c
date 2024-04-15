@@ -6,11 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:14:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2023/11/25 14:58:00 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:45:45 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/**
-* #include <stdlib.h>
+
+/** #include <stdlib.h>
 *
 * atoi  -  int atoi(const char *str);
 *
@@ -28,7 +28,7 @@
 
 static int	ft_isspace(int c);
 
-int	ft_atoi(const char *str)
+long int	ft_atoi(const char *str)
 {
 	char		*string;
 	int			i;
@@ -54,7 +54,7 @@ int	ft_atoi(const char *str)
 		result = result * 10;
 	}
 	result = result / 10;
-	return ((int)result * neg);
+	return (result * neg);
 }
 
 static int	ft_isspace(int c)

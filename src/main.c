@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 17:15:39 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:46:27 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int main(int argc, char *argv[])
 		return (ft_putstr_fd("Error\n", 1), 1);
 	}	
 	printf("output str :'%s'\n", str);
+
+	printf("int : %ld\n",ft_atoi(str));
 
 	free(str);
 	return (0);
