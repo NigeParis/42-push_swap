@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 15:15:29 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:37:07 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,12 @@ int main(int argc, char *argv[])
 		return (ft_putstr_fd("Error\n", 1),1);
 
 	str = input_parsing(argc, argv);
-
-
+	if (str == NULL)
+	{
+		//free(str);
+		return (ft_putstr_fd("Error\n", 1), 1);
+	}	
+	printf("str : '%s'\n", str);
 
 	free(str);
 	return (0);

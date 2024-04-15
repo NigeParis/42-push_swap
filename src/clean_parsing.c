@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:14:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 15:15:36 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:37:16 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,25 @@ void	ft_delzero(char *str, char *buffer, int i, int j)
 	}
 	buffer[j] = '\0';
 }
+
+char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i)
+{
+	while (clean_str[i])
+	{	
+		findstr = str_to_find(&clean_str[i]);
+		if (is_args_double(clean_str, findstr))
+		{
+			free(findstr);
+			free(clean_str);
+			clean_str = NULL;
+			break ;
+		}
+		i++;
+		while (clean_str[i] == ' ')
+			i++;
+		free(findstr);
+	}
+	return (clean_str);
+}
+
 

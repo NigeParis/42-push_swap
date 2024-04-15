@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 15:18:40 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:36:12 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int		is_args_numbers(char *str, int *nb_args);
 int		is_args_double(char *str, char *find);
 char	*cleanzero(char *str);
 void	ft_delzero(char *str, char *buffer, int i, int j);
+char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i);
 
 
 #endif
