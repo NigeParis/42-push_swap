@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 16:36:12 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:02:07 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include "../libft/libft.h"
 # include "../ft_printf/src/ft_printf.h"
 # include "../get_next_line/get_next_line_bonus.h"
-# define BUFFER 100
+# define BUFFER 10000
 
 typedef struct s_a
 {

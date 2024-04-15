@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 16:37:05 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:17:29 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,16 @@ char *input_parsing(int argc, char *argv[])
 	findstr = 0;
 	input_str = join_args(argc, argv);
 	clean_str = cleanzero(input_str); 
+	if (!clean_str)
+	{
+		free(input_str);
+		return (free(clean_str),NULL);
+	}
+	printf("input_str  :'%s'\n", input_str);
 	if (!is_args_numbers(clean_str, &nb_args))
 	{
 		free(input_str);
-		free(clean_str);	
-		return (ft_putstr_fd("Error\n", 1),NULL);
+		return (free(clean_str),NULL);
 	}
 	clean_str = ft_check_str_for_doubles(clean_str, findstr, i);
 	free(input_str);

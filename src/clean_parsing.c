@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:14:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 16:37:16 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 17:14:30 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,21 @@ char *cleanzero(char *str)
 {
 	int i;
 	int j;
-	char buffer[BUFFER];
+	char *buffer;
 	char *ret_str;
 
 	i = 0;
 	j = 0;
+	buffer = (char *)malloc(sizeof(char) * (ft_strlen(str) + 1));
+	if (!buffer)
+		return 0;
 	while (str && str[i] == '0')
 		i++;
 	if (str[i] == ' ')
 		i--;
 	ft_delzero(str, buffer, i, j);
-	ret_str = ft_strdup(buffer);	
+	ret_str = ft_strdup(buffer);
+	free(buffer);
 	return (ret_str);	
 }
 
