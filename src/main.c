@@ -6,88 +6,106 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/12 16:47:05 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/14 23:10:32 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-// typedef struct s_list
-// {
-// 	void *content;
-// 	struct s_list *next;
-	
-// } t_list;
 
 void del_content(void *content)
 {
-	content = NULL; 
-//	free(content);
+	printf("delone %d\n", *(int *)content);
+	content = 0; 
+	free(content);
 	return ;
 }
 
 
 
-int	main(int argc, char *argv[])
+char *join_args(int argc, char *argv[])
 {
-	(void)argc,
-	(void)argv;
-
-	int d;
-	int c;
-	int b;
+	char *str;
+	char *tmp;
+	char *tmp2;
+	int	 i;
 	
-	d = 65;
-	c = 999;
-	b = -777;
-
-	t_list *first[3];
-	
-	first[2] = ft_lstnew(&b);
-	first[0] = ft_lstnew(&d);
-	first[1] = ft_lstnew(&c);
-
-	
- 	printf("%d\n", *(int *)first[0]->content );
-	printf("%d\n", ft_lstsize(first[0]));
-	ft_lstadd_back(first, first[1]);
-	ft_lstadd_front(first, first[2]);
-	printf("%d\n", ft_lstsize(first[0]));
-
- 	printf("%d\n", *(int *)first[0]->content );
- 	printf("%d\n", *(int *) first[1]->content );
-	// ft_lstdelone(first[0], del_content);
-	ft_lstdelone(first[2], del_content);
-	
- 	printf("%d\n", *(int *)first[0]->content );
- 	printf("first [1] %d\n", *(int *) first[1]->content );
-	printf("%d\n", ft_lstsize(first[0]));
-
-	printf("last : %d\n", *(int *)ft_lstlast(first[0])->content);
-	
-	int i = 0;
-	if (first[i]->next)
+	i = argc - 1;
+	str = NULL;
+	tmp = NULL;
+	while ( i > 0)
 	{
-		if (first[i] != NULL)
-		{
-			free(first[i]);
-			first[i] = NULL;
-		}
-		i++;
+		tmp2 = ft_strjoin(argv[i], " ");
+		str = ft_strjoin(tmp2, tmp);
+		free(tmp);
+		free(tmp2);
+		tmp = str;		
+		i--;
 	}
-	free(first[i]);
-	first[i] = NULL;
+	return (str);
+}
+
+
+int is_args_numbers(char *str, int *nb_args)
+{
+	int i;
+	int	sign;
+
+	i = 0;
+	sign = 0;
+	while (str[i] == ' ')
+		i++;
+	while (str && str[i])
+	{	
+		while (str[i] != ' ')
+		{
+			if ((str[i] < '0') || (str[i] > '9'))
+			{
+				sign++;	
+				if (((str[i] != '-') && (str[i] != '+')) || sign > 1)				
+					return (0);
+			}	
+			i++;
+		}
+	*nb_args = *nb_args + 1;
+	sign = 0;
+	i++;
+	}
+	return (1);
+}
 
 
 
-	if (first[0] != NULL)
-		printf("after free %d\n", *(int *)first[0]->content );
-	if (first[1] != NULL)
-	 	printf("after free %d\n", *(int *) first[1]->content );
-		
-		
-	printf("%p\n", first[1]);
-	printf("%p\n", first[0]);
+
+
+int main(int argc, char *argv[])
+{
+	char *str;
+	char  **tab;
+	int	 nb_args;
+
+	if (argc < 2)
+		return (ft_putstr_fd("Error\n", 1),1);
+	nb_args = 0;
+	str = join_args(argc, argv);
+
+	if (!is_args_numbers(str, &nb_args))
+	{
+		free(str);	
+		return (ft_putstr_fd("Error\n", 1),1);
+	}
+
+	tab = ft_split(str, ' ');
+
+
+
+
 	
+	printf("nb : %s\n", tab[nb_args - 1]);
+
+
+
+
+	free(str);
 	return (0);
 }
