@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/12 08:41:58 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:18:40 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "../libft/libft.h"
 # include "../ft_printf/src/ft_printf.h"
 # include "../get_next_line/get_next_line_bonus.h"
+# define BUFFER 100
 
 typedef struct s_a
 {
@@ -34,6 +35,14 @@ typedef struct s_b
 	int		i;
 
 }	t_b;
+
+char	*input_parsing(int argc, char *argv[]);
+char	*join_args(int argc, char *argv[]);
+char	*str_to_find(char *str);
+int		is_args_numbers(char *str, int *nb_args);
+int		is_args_double(char *str, char *find);
+char	*cleanzero(char *str);
+void	ft_delzero(char *str, char *buffer, int i, int j);
 
 
 #endif
