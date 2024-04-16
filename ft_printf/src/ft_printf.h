@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:43:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/06 12:34:48 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 00:06:13 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdarg.h>
 
 int		ft_printf(const char *str, ...);
-int		ft_formatcheck(va_list input, char c);
+int		ft_formatcheck(va_list *input, char c);
 int		ft_printf_unsigned_nbr(unsigned int nb);
 int		ft_printf_nbr(int nb);
 size_t	ft_printf_str(char *s);

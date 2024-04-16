@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/26 07:45:04 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/06 09:54:52 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 00:03:52 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			print_size += ft_formatcheck(input, str[i]);
+			print_size += ft_formatcheck(&input, str[i]);
 		}
 		else
 		{
