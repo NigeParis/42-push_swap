@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:14:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/16 11:42:12 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:02:17 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i)
 {
 	int	len;
 
+	del_zeros(clean_str);
 	while (clean_str[i])
 	{	
 		findstr = str_to_find(&clean_str[i]);
@@ -78,6 +79,30 @@ char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i)
 		free(findstr);
 	}
 	return (clean_str);
+}
+
+void	del_zeros(char *str)
+{
+	int	j;
+	int	y;
+
+	j = 0;
+	y = 0;
+	while (str[j])
+	{
+		if (j > 1)
+		{
+			if (str[j - 1] == ' ' && str[j] == '0')
+			{
+				if (str[j + 1] != ' ')
+					j++;
+			}	
+		}
+		str[y] = str[j];
+		y++;
+		j++;
+	}
+	str[y] = '\0';
 }
 
 int	is_over_int_limits(char *str)
@@ -99,7 +124,7 @@ int	is_over_int_limits(char *str)
 			j++;
 		}
 		nbr[j] = '\0';
-		if (ft_strlen(nbr) > 9)
+		if (ft_strlen(nbr) > 10)
 		{
 			chk_nbr = ft_atoi(nbr);
 			if (chk_nbr > 2147483647 || chk_nbr < -2147483648)
