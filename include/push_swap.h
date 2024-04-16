@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/16 16:39:28 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:29:48 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ void	del_zeros(char *str);
 void	del_zeros_helper(char *str, int flag, int j, int y);
 char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i);
 int		is_over_int_limits(char *str);
+char	**data_parsing(int argc, char *argv[]);
+int		ft_print_data(char **tab_str);
 
 
 
