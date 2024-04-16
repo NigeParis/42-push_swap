@@ -6,69 +6,69 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 17:27:22 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/16 11:39:39 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-char *input_parsing(int argc, char *argv[])
+char	*input_parsing(int argc, char *argv[])
 {
-	char *input_str;
-	char *clean_str;
-	char *findstr;
-	int	 nb_args;
-	int i;
+	char	*input_str;
+	char	*clean_str;
+	char	*findstr;
+	int		nb_args;
+	int		i;
 
 	i = 0;
 	nb_args = 0;
 	findstr = 0;
 	input_str = join_args(argc, argv);
-	clean_str = cleanzero(input_str); 
+	clean_str = cleanzero(input_str);
 	if (!clean_str)
 	{
 		free(input_str);
-		return (free(clean_str),NULL);
+		return (free(clean_str), NULL);
 	}
 	printf("input_str  :'%s'\n", input_str);
 	if (!is_args_numbers(clean_str, &nb_args))
 	{
 		free(input_str);
-		return (free(clean_str),NULL);
+		return (free(clean_str), NULL);
 	}
 	clean_str = ft_check_str_for_doubles(clean_str, findstr, i);
 	free(input_str);
 	return (clean_str);
 }
 
-char *join_args(int argc, char *argv[])
+char	*join_args(int argc, char *argv[])
 {
-	char *str;
-	char *tmp;
-	char *tmp2;
-	int	 i;
-	
+	char	*str;
+	char	*tmp;
+	char	*tmp2;
+	int		i;
+
 	i = argc - 1;
 	str = NULL;
 	tmp = NULL;
-	while ( i > 0)
+	while (i > 0)
 	{
 		tmp2 = ft_strjoin(argv[i], " ");
 		str = ft_strjoin(tmp2, tmp);
 		free(tmp);
 		free(tmp2);
-		tmp = str;		
+		tmp = str;
 		i--;
 	}
 	return (str);
 }
 
-char *str_to_find(char *str)
+char	*str_to_find(char *str)
 {
-	int i;
-	int j;
-	char buffer[BUFFER];
-	char *return_str;
+	int		i;
+	int		j;
+	char	buffer[BUFFER];
+	char	*return_str;
 
 	i = 0;
 	j = 0;
@@ -84,9 +84,9 @@ char *str_to_find(char *str)
 	return (return_str);
 }
 
-int is_args_numbers(char *str, int *nb_args)
+int	is_args_numbers(char *str, int *nb_args)
 {
-	int i;
+	int	i;
 	int	sign;
 
 	i = 0;
@@ -99,8 +99,8 @@ int is_args_numbers(char *str, int *nb_args)
 		{
 			if ((str[i] < '0') || (str[i] > '9'))
 			{
-				sign++;	
-				if (((str[i] != '-') && (str[i] != '+')) || sign > 1)				
+				sign++;
+				if (((str[i] != '-') && (str[i] != '+')) || sign > 1)
 					return (0);
 			}	
 			i++;
@@ -112,31 +112,31 @@ int is_args_numbers(char *str, int *nb_args)
 	return (1);
 }
 
-int	is_args_double(char *str, char *find)
+int	is_args_double(char *s, char *f)
 {
-	int i;
-	int j;
-	int count;
+	int	i[3];
 
-	i = 0;
-	j = 0;
-	count = 0;
-	while (str && str[i])
+	i[0] = 0;
+	i[2] = -1;
+	if (!f)
+		return (0);
+	while (s && s[i[0]])
 	{
-		while (str[i++] == find[j++])
+		i[1] = 0;
+		while (f[i[1]] == s[i[0]])
 		{
-			if ((find[j] == '\0') && ((str[i] == ' ') || (str[i] == '\0')))
+			if (f[i[1] + 1] == '\0' && (s[i[0] + 1] == ' '
+					|| s[i[0] + 1] == '\0'))
 			{
-				count++;
+				i[2]++;
 				break ;
 			}
+			i[0]++;
+			i[1]++;
 		}
-		j = 0;
-		while (str[i] != ' ')
-			i++;
-		i++;
+		while (s[i[0]] != ' ')
+			i[0]++;
+		i[0]++;
 	}
-	if (count == 1)
-		count = 0;
-	return (count);
+	return (i[2]);
 }
