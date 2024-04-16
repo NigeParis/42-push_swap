@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/16 11:39:39 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:27:47 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*input_parsing(int argc, char *argv[])
 		free(input_str);
 		return (free(clean_str), NULL);
 	}
-	printf("input_str  :'%s'\n", input_str);
 	if (!is_args_numbers(clean_str, &nb_args))
 	{
 		free(input_str);
