@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:35:20 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/16 16:57:55 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:04:43 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,24 @@
 char	*cleanzero(char *str)
 {
 	int		i;
-	int		start;
-	char	flag;
+	int		posneg;
 
 	i = 0;
+	posneg = 0;
 	while (str && str[i])
 	{
-		flag = 0;
+		if (str[i] == '+' && (str[i + 1] == '-' || str[i + 1] == '+'))
+			return (NULL);
+		if ((str[i] == '+' || str[i] == '-') && str[i + 1] == ' ')
+			return (NULL);
 		if (str[i] == '-')
-		{	
-			start = i;
-			flag++;
+		{
+			posneg = i;
 			i++;
-			while (str[i] == '0' && flag)
+			while (str[i] == '0')
 				i++;
-			if (str[i] == ' ' && flag)
-				str[start] = '0';
+			if (str[i] == ' ')
+				str[posneg] = '+';
 		}
 		i++;
 	}
@@ -53,11 +55,11 @@ char	*cleanzero_helper(char *str, char flag, int i, int j)
 	}
 	while (str && str[i] == '0')
 		i++;
-	if (flag == '-')
+	if (flag == '-' && str[i + 1])
 	{
 		i--;
 		str[i] = flag;
-	}	
+	}
 	if (str[i] == ' ')
 		i--;
 	ft_delzero(str, buffer, i, j);
@@ -98,7 +100,6 @@ void	del_zeros(char *str)
 	y = 0;
 	flag = 0;
 	del_zeros_helper(str, flag, j, y);
-	printf("string %s\n", str);
 }
 
 void	del_zeros_helper(char *str, int flag, int j, int y)
@@ -118,7 +119,7 @@ void	del_zeros_helper(char *str, int flag, int j, int y)
 				y++;
 				j++;
 				flag = 1;
-			}	
+			}
 			while (str[j] == '0' && flag)
 				j++;
 			if (str[j] == ' ' && flag)

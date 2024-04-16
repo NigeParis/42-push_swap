@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/16 13:27:47 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/16 21:02:40 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ int	is_args_numbers(char *str, int *nb_args)
 	while (str[i] == ' ')
 		i++;
 	while (str && str[i])
-	{	
+	{
 		while (str[i] != ' ')
 		{
 			if ((str[i] < '0') || (str[i] > '9'))
@@ -101,12 +101,12 @@ int	is_args_numbers(char *str, int *nb_args)
 				sign++;
 				if (((str[i] != '-') && (str[i] != '+')) || sign > 1)
 					return (0);
-			}	
+			}
 			i++;
 		}
-	*nb_args = *nb_args + 1;
-	sign = 0;
-	i++;
+		*nb_args = *nb_args + 1;
+		sign = 0;
+		i++;
 	}
 	return (1);
 }
