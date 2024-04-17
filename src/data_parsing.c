@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:27:51 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 08:45:54 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 23:23:02 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,33 @@ int	ft_print_data(char **tab_str)
 	}
 	ft_putchar_fd('\n', 1);
 	return (i);
+}
+
+t_stack	**getstack_a(int argc, char *argv[])
+{
+	char	**tab_str;
+	t_stack	**ptr_stack_a = NULL;
+	t_stack *new_node = NULL;
+	int 	i;
+	
+	i = 0;
+	tab_str = data_parsing(argc, argv);
+	if (!tab_str)
+		return (NULL);
+	ptr_stack_a = (t_stack **)ft_lstnewnode(0, 0);
+	while (tab_str[i])
+	{
+		new_node = (t_stack *)ft_lstnewnode((int)ft_atoi(tab_str[i]), i);
+		ft_lstaddnode_front(ptr_stack_a, new_node);
+		free(new_node);
+		i++;
+	}
+	if (argc == 2)
+	{
+		new_node = (t_stack *)ft_lstnewnode(0, 1);
+		ft_lstaddnode_front(ptr_stack_a, new_node);
+		free(new_node);
+	}
+	ft_free_double_tab(tab_str);
+	return (ptr_stack_a);
 }

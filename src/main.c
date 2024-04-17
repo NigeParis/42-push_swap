@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 18:50:43 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 23:21:22 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,11 +99,11 @@ int	ft_lstsizenode(t_stack *lst)
 }
 
 
-void	print_stack(t_stack *stack)
+void	print_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
-	tmp = stack;
+	tmp = *stack;
 
 	while (tmp)
 	{
@@ -126,48 +126,23 @@ void	print_stack(t_stack *stack)
 
 
 
+
 int	main(int argc, char *argv[])
 {
-	char	**tab_str;
-	t_stack	**ptr_stack_a = NULL;
-	t_stack *new_node;
-	int 	i;
+	t_stack **stack_a;
 	
-	i = 0;
-	if (argc < 3)
+	if (argc < 2)
 		return (ft_putstr_fd("Error\n", 1), 1);
-	tab_str = data_parsing(argc, argv);
-	if (!tab_str)
-		return (1);
-
-	
-	ptr_stack_a = (t_stack **)ft_lstnewnode(0, 0);
-
-
-	while (tab_str[i])
-	{
-		new_node = (t_stack *)ft_lstnewnode((int)ft_atoi(tab_str[i]), i);
-		ft_lstaddnode_front(ptr_stack_a, new_node);
-		i++;
-	}
-
-
-	print_stack(*ptr_stack_a);
-	printf("\nsize nodes : %d\n", ft_lstsizenode(*ptr_stack_a));
-
-
-
-	ft_printf("%s......%s\n", "56", "77");
-	
-	// printf("valeur du node id : %d : %d\n", ptr_stack_a[0]->id, ptr_stack_a[0]->valeur);
-	// printf("valeur du node id : %d : %d\n", ptr_stack_a[1]->id, ptr_stack_a[1]->valeur);
+	stack_a = getstack_a(argc, argv);
 
 
 
 
 
-		
-	ft_print_data(tab_str);
-	ft_free_double_tab(tab_str);
+
+
+	//print_stack(stack_a);
+	free(stack_a);
 	return (0);
+
 }

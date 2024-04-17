@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 17:27:47 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 23:00:48 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,17 @@ char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i);
 int		is_over_int_limits(char *str);
 char	**data_parsing(int argc, char *argv[]);
 int		ft_print_data(char **tab_str);
+
+
+void	fill_stack(t_stack **stack_a, int argc, char **tab_str);
+int		ft_lstsizenode(t_stack *lst);
+void	ft_lstaddnode_back(t_stack **lst, t_stack *new);
+t_stack	*ft_lstlastnode(t_stack *lst);
+void	ft_lstaddnode_front(t_stack **lst, t_stack *new);
+t_stack	*ft_lstnewnode(int content, int id);
+t_stack	**getstack_a(int argc, char *argv[]);
+
+
 
 
 
