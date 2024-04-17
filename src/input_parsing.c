@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 08:15:25 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:12:02 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,12 +139,4 @@ int	is_args_double(char *s, char *f)
 	}
 	return (i[2]);
 }
-// str = input_parsing(argc, argv);
-	// if (str == NULL)
-	// 	return (ft_putstr_fd("Error\n", 1), 1);
-	// if (is_over_int_limits(str))
-	// {
-	// 	free(str);
-	// 	return (ft_putstr_fd("Error\n", 1), 1);
-	// }
-	// tab_str = ft_split(str, ' ');
+

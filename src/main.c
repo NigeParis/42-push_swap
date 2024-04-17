@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 18:06:11 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:50:43 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,21 +70,31 @@ void	ft_lstaddnode_back(t_stack **lst, t_stack *new)
 	tmp -> next = new;
 }
 
-int	ft_lstsizenode(t_stack **lst)
+int	ft_lstsizenode(t_stack *lst)
 {
 	int	size;
 	t_stack *tmp;
 
-	tmp = *lst;
+	tmp = lst;
 
 	if (lst == NULL)
 		return (0);
 	size = 0;
-	if (tmp->id > 0)
+
+	while (tmp)
 	{
-		tmp = tmp -> next;
-		size++;
+		if (tmp->next)
+		{
+			size++;
+			tmp = tmp -> next;
+		}
+		else
+		{
+			size++;
+			break ;
+		}
 	}
+
 	return (size);
 }
 
@@ -94,14 +104,27 @@ void	print_stack(t_stack *stack)
 	t_stack	*tmp;
 
 	tmp = stack;
-	if (tmp->id > 0)
+
+	while (tmp)
 	{
-		ft_printf("id: %d ", tmp->id);
-		ft_printf("nb: %d \n", tmp->valeur);
-		if (tmp->id > 0)
+		if (tmp->next)
+		{
+			ft_printf("id: %d ", tmp->id);
+			ft_printf("nb: %d \n", tmp->valeur);
 			tmp = tmp->next;
+		}
+		else
+		{
+			ft_printf("id: %d ", tmp->id);
+			ft_printf("nb: %d \n", tmp->valeur);
+			break ;
+			
+		}
 	}
+	
 }
+
+
 
 int	main(int argc, char *argv[])
 {
@@ -118,19 +141,19 @@ int	main(int argc, char *argv[])
 		return (1);
 
 	
-	ptr_stack_a = (t_stack **)ft_lstnewnode(0, -1);
-	ft_lstaddnode_back(ptr_stack_a, NULL);
+	ptr_stack_a = (t_stack **)ft_lstnewnode(0, 0);
 
 
 	while (tab_str[i])
 	{
-		new_node = (t_stack *)ft_lstnewnode((int)ft_atoi(tab_str[i]), 1);
+		new_node = (t_stack *)ft_lstnewnode((int)ft_atoi(tab_str[i]), i);
 		ft_lstaddnode_front(ptr_stack_a, new_node);
 		i++;
 	}
 
+
 	print_stack(*ptr_stack_a);
-	printf("size nodes : %d\n", ft_lstsizenode(ptr_stack_a));
+	printf("\nsize nodes : %d\n", ft_lstsizenode(*ptr_stack_a));
 
 
 
