@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 00:02:41 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:47:59 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int	main(int argc, char *argv[])
 	char	**tab_str;
 	t_stack_a	*ptr_stack_a[2];
 	
-	if (argc < 2)
+	if (argc < 3)
 		return (ft_putstr_fd("Error\n", 1), 1);
 	tab_str = data_parsing(argc, argv);
 	if (!tab_str)

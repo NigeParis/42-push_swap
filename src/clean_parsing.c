@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:14:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 08:15:04 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:49:08 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i)
 {
 	int	len;
 
-	(void)argc;
 	del_zeros(clean_str);
 	while (clean_str[i])
 	{
@@ -51,8 +50,7 @@ char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i)
 			i++;
 		free(findstr);
 	}
-	// if (argc > 2)
-	// 	lastchk(clean_str);
+	lastchk(clean_str);
 	return (clean_str);
 }
 
