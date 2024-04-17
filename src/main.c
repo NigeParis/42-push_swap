@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 08:47:59 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:06:11 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	del_content(void *content)
 	return ;
 }
 
-t_stack_a	*ft_lstnewnode(int content, int id)
+t_stack	*ft_lstnewnode(int content, int id)
 {
-	t_stack_a	*ptr;
+	t_stack	*ptr;
 
-	ptr = ft_calloc(1, sizeof(t_stack_a));
+	ptr = ft_calloc(1, sizeof(t_stack));
 	if (!ptr)
 		return (NULL);
 	ptr -> id = id;
@@ -33,80 +33,84 @@ t_stack_a	*ft_lstnewnode(int content, int id)
 	return (ptr);
 }
 
-void	ft_lstaddnode_front(t_stack_a **lst, t_stack_a *new)
+void	ft_lstaddnode_front(t_stack **lst, t_stack *new)
 {
-	if (new == NULL)
+	if (!lst && !new)
 		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
 	new->next = *lst;
 	*lst = new;
 }
 
-t_stack_a	*ft_lstlastnode(t_stack_a *lst)
+t_stack	*ft_lstlastnode(t_stack *lst)
 {
-	if (lst == NULL)
-		return (0);
-	while (lst -> next)
+	t_stack *tmp;
+	
+	tmp = lst;
+	while (tmp)
 	{
-		lst = lst -> next;
+		if(!tmp->next)
+			return(tmp);
+		tmp = tmp->next;
 	}
-	return (lst);
+	return (tmp);
 }
 
 
-void	ft_lstaddnode_back(t_stack_a **lst, t_stack_a *new)
+void	ft_lstaddnode_back(t_stack **lst, t_stack *new)
 {
-	t_stack_a	*tmp;
+	t_stack	*tmp;
 
-	if (new == NULL)
+	if (!new)
 		return ;
-	if (*lst == NULL)
+	if (!*lst)
 	{
-		*lst = new;
-		return ;
+		return (ft_lstaddnode_front(lst,new));
 	}
 	tmp = ft_lstlastnode(*lst);
 	tmp -> next = new;
 }
 
-int	ft_lstsizenode(t_stack_a *lst)
+int	ft_lstsizenode(t_stack **lst)
 {
 	int	size;
+	t_stack *tmp;
+
+	tmp = *lst;
 
 	if (lst == NULL)
 		return (0);
 	size = 0;
-	while (lst)
+	if (tmp->id > 0)
 	{
-		lst = lst -> next;
+		tmp = tmp -> next;
 		size++;
 	}
 	return (size);
 }
 
 
-void	print_stack(t_stack_a *stack)
+void	print_stack(t_stack *stack)
 {
-	t_stack_a	*tmp;
+	t_stack	*tmp;
 
 	tmp = stack;
-	while (tmp)
+	if (tmp->id > 0)
 	{
 		ft_printf("id: %d ", tmp->id);
 		ft_printf("nb: %d \n", tmp->valeur);
-		tmp = tmp->next;
+		if (tmp->id > 0)
+			tmp = tmp->next;
 	}
 }
 
 int	main(int argc, char *argv[])
 {
 	char	**tab_str;
-	t_stack_a	*ptr_stack_a[2];
+	t_stack	**ptr_stack_a = NULL;
+	t_stack *new_node;
+	int 	i;
 	
+	i = 0;
 	if (argc < 3)
 		return (ft_putstr_fd("Error\n", 1), 1);
 	tab_str = data_parsing(argc, argv);
@@ -114,22 +118,26 @@ int	main(int argc, char *argv[])
 		return (1);
 
 	
-	ptr_stack_a[0] = ft_lstnewnode((int)ft_atoi(tab_str[0]), 1);
-	ptr_stack_a[1] = ft_lstnewnode((int)ft_atoi(tab_str[1]), 2);
+	ptr_stack_a = (t_stack **)ft_lstnewnode(0, -1);
+	ft_lstaddnode_back(ptr_stack_a, NULL);
 
 
-	ft_lstaddnode_back(ptr_stack_a, ptr_stack_a[1]);
+	while (tab_str[i])
+	{
+		new_node = (t_stack *)ft_lstnewnode((int)ft_atoi(tab_str[i]), 1);
+		ft_lstaddnode_front(ptr_stack_a, new_node);
+		i++;
+	}
+
+	print_stack(*ptr_stack_a);
+	printf("size nodes : %d\n", ft_lstsizenode(ptr_stack_a));
 
 
-	print_stack(ptr_stack_a[0]);
 
 	ft_printf("%s......%s\n", "56", "77");
-
-
-	printf("size nodes : %d\n", ft_lstsizenode(ptr_stack_a[0]));
 	
-	printf("valeur du node id : %d : %d\n", ptr_stack_a[0]->id, ptr_stack_a[0]->valeur);
-	printf("valeur du node id : %d : %d\n", ptr_stack_a[1]->id, ptr_stack_a[1]->valeur);
+	// printf("valeur du node id : %d : %d\n", ptr_stack_a[0]->id, ptr_stack_a[0]->valeur);
+	// printf("valeur du node id : %d : %d\n", ptr_stack_a[1]->id, ptr_stack_a[1]->valeur);
 
 
 

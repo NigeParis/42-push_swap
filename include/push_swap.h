@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 08:15:15 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 17:27:47 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,13 @@
 # include "../get_next_line/get_next_line_bonus.h"
 # define BUFFER 10000
 
-typedef struct s_stack_a
+typedef struct s_stack
 {
-	unsigned int		id;
-	int					valeur;
-	struct s_stack_a	*next;
-}	t_stack_a;
+	int				id;
+	int				valeur;
+	struct s_stack	*next;
+}	t_stack;
 
-typedef struct s_stack_b
-{
-	unsigned int		id;
-	int					valeur;
-	struct s_stack_b	*next;
-}	t_stack_b;
 
 char	*input_parsing(int argc, char *argv[]);
 char	*join_args(int argc, char *argv[]);
