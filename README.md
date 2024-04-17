@@ -1,5 +1,5 @@
 
-##PUSH_SWAP
+### PUSH_SWAP
 
 The Push swap project is a very simple and a highly straightforward algorithm project:<br>
 data must be sorted.<br>
