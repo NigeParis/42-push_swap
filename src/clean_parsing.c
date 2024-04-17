@@ -6,16 +6,33 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:14:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/16 21:05:57 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/17 08:15:04 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+void	lastchk(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str && str[i])
+	{
+		if (str[i] == ' ' && str[i + 1] == '0' && str[i + 2] != ' ')
+			str[i + 1] = ' ';
+		i++;
+	}
+	
+}
+
+
+
 char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i)
 {
 	int	len;
 
+	(void)argc;
 	del_zeros(clean_str);
 	while (clean_str[i])
 	{
@@ -34,6 +51,8 @@ char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i)
 			i++;
 		free(findstr);
 	}
+	// if (argc > 2)
+	// 	lastchk(clean_str);
 	return (clean_str);
 }
 
