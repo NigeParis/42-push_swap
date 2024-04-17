@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 23:21:22 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 00:24:20 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ void	del_content(void *content)
 t_stack	*ft_lstnewnode(int content, int id)
 {
 	t_stack	*ptr;
-
-	ptr = ft_calloc(1, sizeof(t_stack));
+	
+	ptr = NULL;
+	ptr = (t_stack *)malloc(sizeof(t_stack));
 	if (!ptr)
 		return (NULL);
 	ptr -> id = id;
@@ -124,7 +125,21 @@ void	print_stack(t_stack **stack)
 	
 }
 
+void	stackclear(t_stack **stack)
+{
+	t_stack	*tmp;
 
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
+	free(stack);
+//	*stack = NULL;
+}
 
 
 int	main(int argc, char *argv[])
@@ -134,15 +149,17 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		return (ft_putstr_fd("Error\n", 1), 1);
 	stack_a = getstack_a(argc, argv);
+	if (stack_a)
+	{
 
 
 
 
 
-
-
-	//print_stack(stack_a);
-	free(stack_a);
+	print_stack(stack_a);
+	stackclear(stack_a);
+	
+	}
 	return (0);
 
 }
