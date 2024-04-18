@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 10:23:02 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:49:14 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char	*cleanzero_helper(char *str, char flag, int i, int j);
 void	ft_delzero(char *str, char *buffer, int i, int j);
 void	del_zeros(char *str);
 void	del_zeros_helper(char *str, int flag, int j, int y);
+int		free_msg(t_stack **stack_a, t_stack **stack_b, int action, char *msg);
 
 // list tools - creation stack
 int		ft_lstsizenode(t_stack *lst);
@@ -55,7 +56,7 @@ t_stack	*ft_lstnewnode(int content, int id);
 
 // stack tools - stack a
 t_stack	**getstack_a(int i, int argc, char *argv[]);
-void	getstack_error(char **tab_str, t_stack **ptr_stack_a);
+void	getstack_error(int chx, char **tab_str, t_stack **ptr_stack_a);
 void	clear_stack(t_stack **stack);
 void	print_stack(t_stack **stack);
 

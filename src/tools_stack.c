@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_tools.c                                      :+:      :+:    :+:   */
+/*   tools_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 10:08:47 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:50:08 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	getstack_error(char **tab_str, t_stack **ptr_stack_a)
-{
-	ft_free_double_tab(tab_str);
-	clear_stack(ptr_stack_a);
-	ft_putstr_fd("Error\n", 1);
-}
+
 
 t_stack	**getstack_a(int i, int argc, char *argv[])
 {
 	char	**tab_str;
-	t_stack	**ptr_stack_a;
+	t_stack	**ptr_stack_a = NULL;
 	t_stack	*new_node;
 
 	tab_str = data_parsing(argc, argv);
 	if (!tab_str)
 		return (NULL);
 	ptr_stack_a = (t_stack **)malloc(sizeof(t_stack));
+	if (!ptr_stack_a)
+		return (getstack_error(1, tab_str, ptr_stack_a), NULL);
 	*ptr_stack_a = NULL;
 	while (tab_str[i])
 	{
@@ -39,7 +36,7 @@ t_stack	**getstack_a(int i, int argc, char *argv[])
 	if (argc == 2 && i == 1)
 	{
 		if (new_node->valeur == 0)
-			return (getstack_error(tab_str, ptr_stack_a), NULL);
+			return (getstack_error(1, tab_str, ptr_stack_a), NULL);
 		new_node = (t_stack *)ft_lstnewnode(0, 1);
 		ft_lstaddnode_front(ptr_stack_a, new_node);
 	}
@@ -83,7 +80,8 @@ void	clear_stack(t_stack **stack)
 		tmp = (*stack)->next;
 		free(*stack);
 		*stack = tmp;
-	}
-	free(stack);
+	}	
+	if (stack)
+		free(stack);
 	stack = NULL;
 }

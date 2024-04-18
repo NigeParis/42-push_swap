@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 10:18:58 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:49:28 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,29 @@ void	del_content(void *content)
 
 
 
-
-
 int	main(int argc, char *argv[])
 {
 	t_stack **stack_a;
-	(void)argv;
+	t_stack **stack_b;
 	
 	if (argc < 2)
 		return (ft_putstr_fd("Error\n", 1), 1);
 	stack_a = getstack_a(0, argc, argv);
 	if (!stack_a)
 		return (1);
-	
+	stack_b = (t_stack **)malloc(sizeof(t_stack));
+	if (!stack_b)
+		return (free_msg(stack_a, stack_b, 1, "Error\n"));
+	*stack_b = NULL;
+
+
+
 
 
 
 
 
 	print_stack(stack_a);
-	clear_stack(stack_a);
-	
-	
-	return (0);
-
+	print_stack(stack_b);
+	return (free_msg(stack_a, stack_b, 2, ""));
 }

@@ -26,7 +26,7 @@ INCLUDE= -I./usr/include/
 
 SRC= ./src/main.c ./src/input_get_check.c ./src/input_check.c
 SRC+= ./src/input_clean_zeros.c ./src/input_split.c ./src/tools_stack.c
-SRC+= ./src/tools_list.c
+SRC+= ./src/tools_list.c ./src/free_errors.c
 
 BONUS_SRC= 
 
