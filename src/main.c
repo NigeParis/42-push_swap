@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 19:37:47 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 21:05:47 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,14 @@ int	main(int argc, char *argv[])
 	print_stack(b, 'b');
 
 	//sb(b);
+	// del_node(a);
+	// del_node(a);
+	// del_node(a);
+	// del_node(a);
 
+	// pb(a,b);
 
-	pa(a,b);
+	rotate(a);
 
 	print_stack(a, 'a');
 	print_stack(b, 'b');

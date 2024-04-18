@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 19:09:11 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:49:42 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_stack	**getstack_a(int i, int argc, char *argv[])
 {
 	char	**tab_str;
-	t_stack	**ptr_stack_a = NULL;
+	t_stack	**ptr_stack_a;
 	t_stack	*new_node;
 
 	tab_str = data_parsing(argc, argv);
@@ -36,15 +36,12 @@ t_stack	**getstack_a(int i, int argc, char *argv[])
 	return (ft_free_double_tab(tab_str), ptr_stack_a);
 }
 
-void	print_stack(t_stack **stack, char c)
+int	print_stack(t_stack **stack, char c)
 {
 	t_stack	*tmp;
 
 	if (!stack || !*stack)
-	{
-		printf("stack %c empty\n\n", c);
-		return ;
-	}	
+		return (printf("stack %c empty\n\n", c), 1);
 	tmp = *stack;
 	printf("stack : %c\n", c);
 	while (tmp)
@@ -64,6 +61,7 @@ void	print_stack(t_stack **stack, char c)
 			break ;
 		}
 	}
+	return (0);
 }
 
 void	clear_stack(t_stack **stack)
