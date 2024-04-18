@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 16:27:35 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 19:28:11 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,10 @@ void	print_stack(t_stack **stack, char c);
 
 //sort tools
 void    sa(t_stack **stack);
+void    sb(t_stack **stack);
+void    ss(t_stack **stack_a, t_stack **stack_b);
+void    pa(t_stack **stack_a, t_stack **stack_b);
+void    pb(t_stack **stack_a, t_stack **stack_b);
+int		push(t_stack **stack_dst, t_stack **stack);
 
 #endif
