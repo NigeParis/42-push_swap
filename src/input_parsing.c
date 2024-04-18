@@ -6,24 +6,24 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 18:12:02 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 07:53:20 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-char	*input_parsing(int argc, char *argv[])
+char	*input_parsing(int i, int argc, char *argv[])
 {
 	char	*input_str;
 	char	*clean_str;
 	char	*findstr;
 	int		nb_args;
-	int		i;
 
-	i = 0;
 	nb_args = 0;
 	findstr = 0;
 	input_str = join_args(argc, argv);
+	if(is_sign_error(input_str))
+		return (free(input_str), NULL);	
 	clean_str = cleanzero(input_str);
 	if (!clean_str)
 	{

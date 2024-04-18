@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:27:51 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 00:11:01 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 07:44:22 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**data_parsing(int argc, char *argv[])
 	char	**tab_str;
 
 	tab_str = NULL;
-	str = input_parsing(argc, argv);
+	str = input_parsing(0, argc, argv);
 	if (str == NULL)
 		return (ft_putstr_fd("Error\n", 1), tab_str);
 	if (is_over_int_limits(str))

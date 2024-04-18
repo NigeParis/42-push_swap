@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/17 23:00:48 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 07:51:54 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 }	t_stack;
 
 
-char	*input_parsing(int argc, char *argv[]);
+char	*input_parsing(int i, int argc, char *argv[]);
 char	*join_args(int argc, char *argv[]);
 char	*str_to_find(char *str);
 int		is_args_numbers(char *str, int *nb_args);
@@ -46,6 +46,7 @@ char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i);
 int		is_over_int_limits(char *str);
 char	**data_parsing(int argc, char *argv[]);
 int		ft_print_data(char **tab_str);
+int		is_sign_error(char *input_str);
 
 
 void	fill_stack(t_stack **stack_a, int argc, char **tab_str);
