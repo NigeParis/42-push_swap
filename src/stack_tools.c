@@ -6,25 +6,29 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 08:44:49 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:53:35 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-t_stack	**getstack_a(int argc, char *argv[])
+void	getstack_error(char **tab_str, t_stack **ptr_stack_a)
+{
+	ft_free_double_tab(tab_str);
+	clear_stack(ptr_stack_a);
+	ft_putstr_fd("Error\n", 1);
+}
+
+t_stack	**getstack_a(int i, int argc, char *argv[])
 {
 	char	**tab_str;
-	t_stack	**ptr_stack_a = NULL;
-	t_stack *new_node;
-	int 	i;
-	
-	i = 0;
+	t_stack	**ptr_stack_a;
+	t_stack	*new_node;
+
 	tab_str = data_parsing(argc, argv);
 	if (!tab_str)
 		return (NULL);
-	free(ptr_stack_a);
-	ptr_stack_a = (t_stack**)malloc(sizeof(t_stack));
+	ptr_stack_a = (t_stack **)malloc(sizeof(t_stack));
 	*ptr_stack_a = NULL;
 	while (tab_str[i])
 	{
@@ -34,11 +38,12 @@ t_stack	**getstack_a(int argc, char *argv[])
 	}
 	if (argc == 2 && i == 1)
 	{
+		if (new_node->valeur == 0)
+			return (getstack_error(tab_str, ptr_stack_a), NULL);
 		new_node = (t_stack *)ft_lstnewnode(0, 1);
 		ft_lstaddnode_front(ptr_stack_a, new_node);
 	}
-	ft_free_double_tab(tab_str);
-	return (ptr_stack_a);
+	return (ft_free_double_tab(tab_str), ptr_stack_a);
 }
 
 void	print_stack(t_stack **stack)

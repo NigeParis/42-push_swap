@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 08:43:22 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 09:17:02 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int	main(int argc, char *argv[])
 	
 	if (argc < 2)
 		return (ft_putstr_fd("Error\n", 1), 1);
-	stack_a = getstack_a(argc, argv);
+	stack_a = getstack_a(0, argc, argv);
 	if (!stack_a)
 		return (1);
 	
