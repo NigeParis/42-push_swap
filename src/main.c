@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 08:36:05 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 08:43:22 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,47 +100,6 @@ int	ft_lstsizenode(t_stack *lst)
 }
 
 
-void	print_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	if (!stack)
-		return ;
-	tmp = *stack;
-	while (tmp)
-	{
-		if (tmp->next)
-		{
-			ft_printf("id: %d ", tmp->id);
-			ft_printf("nbr: %d ", tmp->valeur);
-			ft_printf("add: %p \n", tmp->next);
-			tmp = tmp->next;
-		}
-		else
-		{
-			ft_printf("id: %d ", tmp->id);
-			ft_printf("nbr: %d ", tmp->valeur);
-			ft_printf("add: %p \n", tmp->next);
-			break ;
-		}
-	}
-}
-
-void	stackclear(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	if (!stack)
-		return ;
-	while (*stack)
-	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
-	}
-	free(stack);
-	stack = NULL;
-}
 
 
 int	main(int argc, char *argv[])
@@ -160,7 +119,7 @@ int	main(int argc, char *argv[])
 
 
 	print_stack(stack_a);
-	stackclear(stack_a);
+	clear_stack(stack_a);
 	
 	
 	return (0);
