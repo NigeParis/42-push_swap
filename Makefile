@@ -24,8 +24,9 @@ OBJ_DIR=
 
 INCLUDE= -I./usr/include/
 
-SRC= ./src/main.c ./src/input_parsing.c ./src/check_parsing.c
-SRC+= ./src/clean_zero_parsing.c ./src/data_parsing.c ./src/stack_tools.c
+SRC= ./src/main.c ./src/input_get_check.c ./src/input_check.c
+SRC+= ./src/input_clean_zeros.c ./src/input_split.c ./src/tools_stack.c
+SRC+= ./src/tools_list.c
 
 BONUS_SRC= 
 
