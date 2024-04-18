@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:27:51 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 07:44:22 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 08:06:52 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ t_stack	**getstack_a(int argc, char *argv[])
 		ft_lstaddnode_front(ptr_stack_a, new_node);
 		i++;
 	}
-	if (argc == 2)
+	if (argc == 2 && i == 1)
 	{
 		new_node = (t_stack *)ft_lstnewnode(0, 1);
 		ft_lstaddnode_front(ptr_stack_a, new_node);
