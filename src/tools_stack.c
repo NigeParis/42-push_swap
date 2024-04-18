@@ -6,13 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 15:50:08 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:36:01 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-
 
 t_stack	**getstack_a(int i, int argc, char *argv[])
 {
@@ -34,22 +32,21 @@ t_stack	**getstack_a(int i, int argc, char *argv[])
 		i++;
 	}
 	if (argc == 2 && i == 1)
-	{
-		if (new_node->valeur == 0)
-			return (getstack_error(1, tab_str, ptr_stack_a), NULL);
-		new_node = (t_stack *)ft_lstnewnode(0, 1);
-		ft_lstaddnode_front(ptr_stack_a, new_node);
-	}
+		return (getstack_error(1, tab_str, ptr_stack_a), NULL);
 	return (ft_free_double_tab(tab_str), ptr_stack_a);
 }
 
-void	print_stack(t_stack **stack)
+void	print_stack(t_stack **stack, char c)
 {
 	t_stack	*tmp;
 
-	if (!stack)
+	if (!stack || !*stack)
+	{
+		printf("stack %c empty\n", c);
 		return ;
+	}	
 	tmp = *stack;
+	printf("stack : %c\n", c);
 	while (tmp)
 	{
 		if (tmp->next)
@@ -63,7 +60,7 @@ void	print_stack(t_stack **stack)
 		{
 			ft_printf("id: %d ", tmp->id);
 			ft_printf("nbr: %d ", tmp->valeur);
-			ft_printf("add: %p \n", tmp->next);
+			ft_printf("add: %p \n\n", tmp->next);
 			break ;
 		}
 	}
