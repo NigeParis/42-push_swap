@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 18:25:32 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 21:19:52 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,8 @@ int 	rotate(t_stack **stack);
 int		swap(t_stack **stack);
 int		push(t_stack **stack_dst, t_stack **stack);
 void    del_node(t_stack **stack);
+
+//sort - algo
+void	small_sort(t_stack **a, int argc);
 
 #endif
