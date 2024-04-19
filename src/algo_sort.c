@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:18:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 21:20:26 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 21:29:11 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ void	small_sort(t_stack **a, int argc)
 	
 	frst = &(*a) -> valeur;
 	scnd = &(*a) -> next -> valeur;
-	thrd = &(*a) -> next -> next -> valeur;
 	if (*frst < *scnd && argc == 3)
+	{
 		sa(a);
+		return ;
+	}	
+	thrd = &(*a) -> next -> next -> valeur;
 	if (*frst < *scnd && *scnd > *thrd && *frst > *thrd && argc == 4)
 		sa(a);
 	if (*frst > *scnd && *scnd < *thrd && *frst > *thrd && argc == 4)
