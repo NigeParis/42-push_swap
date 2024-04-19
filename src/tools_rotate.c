@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 20:53:05 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 10:18:06 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:16:06 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,9 @@ void    rr(t_stack **stack_a, t_stack **stack_b)
 {
     if (!stack_a || !stack_b)
         return ;
-    if (rotate(stack_a) && (rotate(stack_b)))
-        ft_printf("rr\n");
-    
+    if ((ft_lstsizenode(*stack_a) > 1) && (ft_lstsizenode(*stack_a) > 1))
+	{
+        if (rotate(stack_a) && (rotate(stack_b)))
+            ft_printf("rr\n");
+    }
 }
