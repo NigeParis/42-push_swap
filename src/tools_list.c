@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_tools.c                                       :+:      :+:    :+:   */
+/*   tools_list.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:08:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 10:19:10 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:57:51 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_stack	*ft_lstnewnode(int content, int id)
 {
 	t_stack	*ptr;
-	
+
 	ptr = NULL;
 	ptr = (t_stack *)malloc(sizeof(t_stack));
 	if (!ptr)
@@ -42,7 +42,7 @@ void	ft_lstaddnode_back(t_stack **lst, t_stack *new)
 		return ;
 	if (!*lst)
 	{
-		return (ft_lstaddnode_front(lst,new));
+		return (ft_lstaddnode_front(lst, new));
 	}
 	tmp = ft_lstlastnode(*lst);
 	tmp -> next = new;
@@ -50,13 +50,13 @@ void	ft_lstaddnode_back(t_stack **lst, t_stack *new)
 
 t_stack	*ft_lstlastnode(t_stack *lst)
 {
-	t_stack *tmp;
-	
+	t_stack	*tmp;
+
 	tmp = lst;
 	while (tmp)
 	{
-		if(!tmp->next)
-			return(tmp);
+		if (!tmp->next)
+			return (tmp);
 		tmp = tmp->next;
 	}
 	return (tmp);
@@ -64,8 +64,8 @@ t_stack	*ft_lstlastnode(t_stack *lst)
 
 int	ft_lstsizenode(t_stack *lst)
 {
-	int	size;
-	t_stack *tmp;
+	int		size;
+	t_stack	*tmp;
 
 	tmp = lst;
 	if (lst == NULL)

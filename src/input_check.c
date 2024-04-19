@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:14:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 14:42:13 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:54:04 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ void	lastchk(char *str)
 			str[i + 1] = ' ';
 		i++;
 	}
-	
 }
-
-
 
 char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i)
 {
@@ -85,7 +82,7 @@ int	is_over_int_limits(char *str)
 
 int	is_sign_error(char *input_str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!input_str)
@@ -100,7 +97,7 @@ int	is_sign_error(char *input_str)
 					return (1);
 			}	
 		}
-		i++;	
+		i++;
 	}
 	return (0);
 }

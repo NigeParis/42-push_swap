@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_parsing.c                                    :+:      :+:    :+:   */
+/*   input_get_check.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 07:53:20 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:55:08 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ char	*input_parsing(int i, int argc, char *argv[])
 	nb_args = 0;
 	findstr = 0;
 	input_str = join_args(argc, argv);
-	if(is_sign_error(input_str))
-		return (free(input_str), NULL);	
+	if (is_sign_error(input_str))
+		return (free(input_str), NULL);
 	clean_str = cleanzero(input_str);
 	if (!clean_str)
 	{
@@ -139,4 +139,3 @@ int	is_args_double(char *s, char *f)
 	}
 	return (i[2]);
 }
-

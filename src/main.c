@@ -6,21 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 12:16:31 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:50:00 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void	del_content(void *content)
-{
-	printf("delone %d\n", *(int *)content);
-	content = 0;
-	free(content);
-	return ;
-}
-
-
 
 
 
@@ -62,6 +52,8 @@ int	main(int argc, char *argv[])
 
 	//pb(a,b);
 	pb(a, b);
+	pb(a, b);	
+	pb(a, b);
 	pb(a, b);
 
 	print_stack(a, 'a');
@@ -70,7 +62,7 @@ int	main(int argc, char *argv[])
 	// ra(a);
 	// rrb(b);
 	// rrb(b);
-	rr(a, b);
+	sb(b);
 
 
 	print_stack(a, 'a');
