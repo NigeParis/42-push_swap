@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 12:13:03 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:25:32 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ t_stack	**getstack_a(int i, int argc, char *argv[]);
 void	getstack_error(int chx, char **tab_str, t_stack **ptr_stack_a);
 void	clear_stack(t_stack **stack);
 int		print_stack(t_stack **stack, char c);
+int	is_stack_sorted(t_stack **a);
+
 
 //sort - push tools
 void    sa(t_stack **stack);

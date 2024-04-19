@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 10:20:48 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:26:07 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,9 @@ t_stack	**getstack_a(int i, int argc, char *argv[])
 		ft_lstaddnode_front(ptr_stack_a, new_node);
 		i++;
 	}
-	if (argc == 2 && i == 1)
-		return (getstack_error(1, tab_str, ptr_stack_a), NULL);
 	return (ft_free_double_tab(tab_str), ptr_stack_a);
 }
-
+	
 int	print_stack(t_stack **stack, char c)
 {
 	t_stack	*tmp;
@@ -79,4 +77,24 @@ void	clear_stack(t_stack **stack)
 	if (stack)
 		free(stack);
 	stack = NULL;
+}
+
+int	is_stack_sorted(t_stack **a)
+{
+	t_stack *tmp;
+	int		nbr;
+	tmp = *a;
+	while (tmp)
+	{
+		nbr = tmp->valeur;
+		if (tmp->next)
+		{
+			tmp = tmp->next;
+			if (nbr < tmp->valeur)		
+				return (0);
+		}
+		else
+			break;
+	}
+	return (1);
 }

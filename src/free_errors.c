@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:29:23 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 13:52:35 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 18:21:23 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	getstack_error(int chx, char **tab_str, t_stack **ptr_stack_a)
 	{
 		ft_free_double_tab(tab_str);
 		clear_stack(ptr_stack_a);
-		ft_putstr_fd("Error\n", 1);
 	}
 	if (chx == 2)
 	{
