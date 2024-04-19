@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 10:16:15 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:42:27 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ void    pb(t_stack **stack_a, t_stack **stack_b);
 void    ra(t_stack **stack_a);
 void    rb(t_stack **stack_b);
 void    rr(t_stack **stack_a, t_stack **stack_b);
+void	rra(t_stack **stack_a);
+void	rrb(t_stack **stack_b);
+int		rev_rotate(t_stack **stack);
 int 	rotate(t_stack **stack);
 int		swap(t_stack **stack);
 int		push(t_stack **stack_dst, t_stack **stack);

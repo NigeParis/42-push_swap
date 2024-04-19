@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/18 19:49:42 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/19 10:20:48 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	print_stack(t_stack **stack, char c)
 	if (!stack || !*stack)
 		return (printf("stack %c empty\n\n", c), 1);
 	tmp = *stack;
-	printf("stack : %c\n", c);
+	printf("\nstack : %c\n", c);
 	while (tmp)
 	{
 		if (tmp->next)
