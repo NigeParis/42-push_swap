@@ -6,11 +6,12 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 21:21:49 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/20 09:29:44 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
 
 
 
@@ -32,25 +33,15 @@ int	main(int argc, char *argv[])
 		return (free_msg(a, b, 1, "Error\n"));
 	*b = NULL;
 	if (is_stack_sorted(a))
-	{	
 		return (free_msg(a, b, 2, ""));
-	}
 	if (argc < 5)
 		small_sort(a, argc);
-	else
-	{
-
-
-
+	if (argc > 4 && argc < 7)	
+		five_sort(a, b, argc);
 		
-	}
 
 
-
-
-
-
-	
+	update_node_id(a);	
 	print_stack(a, 'a');
 	print_stack(b, 'b');
 	return (free_msg(a, b, 2, ""));

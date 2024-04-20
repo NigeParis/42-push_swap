@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 21:19:52 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:42:52 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,21 @@ void    del_node(t_stack **stack);
 
 //sort - algo
 void	small_sort(t_stack **a, int argc);
+int	five_sort(t_stack **a, t_stack **b, int argc);
+void	update_node_id(t_stack **stack);
+
+//five - sort - solutions
+void abdc(t_stack **a, t_stack **b, int **p);
+void acbd(t_stack **a, t_stack **b, int **p);
+void acdb(t_stack **a, t_stack **b, int **p);
+void adbc(t_stack **a, t_stack **b, int **p);
+void adcb(t_stack **a, t_stack **b, int **p);
+
+void bacd(t_stack **a, t_stack **b, int **p);
+void badc(t_stack **a, t_stack **b, int **p);
+void bcad(t_stack **a, t_stack **b, int **p);
+void bcda(t_stack **a, t_stack **b, int **p);
+void bdac(t_stack **a, t_stack **b, int **p);
+void bdca(t_stack **a, t_stack **b, int **p);
 
 #endif
