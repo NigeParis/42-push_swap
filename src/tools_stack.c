@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 18:26:07 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:23:56 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,47 @@ int	is_stack_sorted(t_stack **a)
 			break;
 	}
 	return (1);
+}
+
+int	find_min_val_pos(int *p, int argc)
+{
+	int i;
+	int	min;
+	int pos;
+
+	min = p[0];
+	pos = 0;
+	i = 0;
+	while (i < argc - 1)
+	{
+		if (p[i] < min)
+		{
+			min = p[i];
+			pos = i;
+		}
+		i++;
+	}
+	return (pos);
+}
+
+
+int	find_max_val_pos(int *p, int argc)
+{
+	int i;
+	int	max;
+	int pos;
+
+	max = p[0];
+	pos = 0;
+	i = 0;
+	while (i < argc - 1)
+	{
+		if (p[i] > max)
+		{
+			max = p[i];
+			pos = i;
+		}
+		i++;
+	}
+	return (pos);
 }

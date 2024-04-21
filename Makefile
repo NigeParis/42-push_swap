@@ -28,8 +28,12 @@ SRC= ./src/main.c ./src/input_get_check.c ./src/input_check.c
 SRC+= ./src/input_clean_zeros.c ./src/input_split.c ./src/tools_stack.c
 SRC+= ./src/tools_list.c ./src/free_errors.c ./src/tools_sort.c
 SRC+= ./src/tools_push.c ./src/tools_rotate.c ./src/tools_rev_rotate.c
-SRC+= ./src/algo_sort.c ./src/tools_node.c
-SRC+= ./src/sort_axxx.c ./src/sort_bxxx_bcad.c ./src/sort_bcda_bdca.c
+SRC+= ./src/sort_mini.c ./src/tools_node.c
+SRC+= ./src/sort_four/sort_axxx.c ./src/sort_four/sort_bxxx_bcad.c 
+SRC+= ./src/sort_four/sort_cabd_cbad.c ./src/sort_four/sort_cbda_cdba.c 
+SRC+= ./src/sort_four/sort_dabc_dbac.c ./src/sort_four/sort_bcda_bdca.c
+SRC+= ./src/sort_four/sort_dbca_dcba.c ./src/sort_four/sort_four.c
+SRC+= ./src/sort_five/sort_five.c ./src/sort_five/sort_five_actions.c
 
 BONUS_SRC= 
 

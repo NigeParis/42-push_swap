@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/20 12:42:52 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/21 16:54:07 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ t_stack	**getstack_a(int i, int argc, char *argv[]);
 void	getstack_error(int chx, char **tab_str, t_stack **ptr_stack_a);
 void	clear_stack(t_stack **stack);
 int		print_stack(t_stack **stack, char c);
-int	is_stack_sorted(t_stack **a);
+int		is_stack_sorted(t_stack **a);
+int		find_min_val_pos(int *p, int argc);
+int		find_max_val_pos(int *p, int argc);
+
 
 
 //sort - push tools
@@ -82,21 +85,50 @@ void    del_node(t_stack **stack);
 
 //sort - algo
 void	small_sort(t_stack **a, int argc);
-int	five_sort(t_stack **a, t_stack **b, int argc);
+int		four_sort(t_stack **a, t_stack **b, int argc, int *p);
+int		five_sort(t_stack **a, t_stack **b, int argc);
 void	update_node_id(t_stack **stack);
 
-//five - sort - solutions
-void abdc(t_stack **a, t_stack **b, int **p);
-void acbd(t_stack **a, t_stack **b, int **p);
-void acdb(t_stack **a, t_stack **b, int **p);
-void adbc(t_stack **a, t_stack **b, int **p);
-void adcb(t_stack **a, t_stack **b, int **p);
+//four - sort - solutions
 
-void bacd(t_stack **a, t_stack **b, int **p);
-void badc(t_stack **a, t_stack **b, int **p);
-void bcad(t_stack **a, t_stack **b, int **p);
-void bcda(t_stack **a, t_stack **b, int **p);
-void bdac(t_stack **a, t_stack **b, int **p);
-void bdca(t_stack **a, t_stack **b, int **p);
+void	axxx(t_stack **a, t_stack **b, int *p);
+void	xaxx(t_stack **a, t_stack **b, int *p);
+void	xxax(t_stack **a, t_stack **b, int *p);
+void	xxxa(t_stack **a, t_stack **b, int *p);
+
+void	abdc(t_stack **a, t_stack **b, int *p);
+void 	acbd(t_stack **a, t_stack **b, int *p);
+void 	acdb(t_stack **a, t_stack **b, int *p);
+void 	adbc(t_stack **a, t_stack **b, int *p);
+void 	adcb(t_stack **a, t_stack **b, int *p);
+
+void 	bacd(t_stack **a, t_stack **b, int *p);
+void 	badc(t_stack **a, t_stack **b, int *p);
+void 	bcad(t_stack **a, t_stack **b, int *p);
+void 	bcda(t_stack **a, t_stack **b, int *p);
+void 	bdac(t_stack **a, t_stack **b, int *p);
+void 	bdca(t_stack **a, t_stack **b, int *p);
+
+void 	cabd(t_stack **a, t_stack **b, int *p);
+void 	cadb(t_stack **a, t_stack **b, int *p);
+void 	cbad(t_stack **a, t_stack **b, int *p);
+void 	cbda(t_stack **a, t_stack **b, int *p);
+void 	cdab(t_stack **a, t_stack **b, int *p);
+void 	cdba(t_stack **a, t_stack **b, int *p);
+
+void 	dabc(t_stack **a, t_stack **b, int *p);
+void 	dacb(t_stack **a, t_stack **b, int *p);
+void 	dbac(t_stack **a, t_stack **b, int *p);
+void 	dbca(t_stack **a, t_stack **b, int *p);
+void 	dcab(t_stack **a, t_stack **b, int *p);
+void 	dcba(t_stack **a, t_stack **b, int *p);
+
+// five_sort
+void	sort_pos_four(t_stack **a, t_stack **b, int argc, int *p);
+void	sort_pos_three(t_stack **a, t_stack **b, int argc, int *p);
+void	sort_pos_two(t_stack **a, t_stack **b, int argc, int *p);
+void	sort_pos_one(t_stack **a, t_stack **b, int argc, int *p);
+void	sort_pos_zero(t_stack **a, t_stack **b, int argc, int *p);
+
 
 #endif
