@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_sort.c                                        :+:      :+:    :+:   */
+/*   sort_mini.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:18:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/21 16:48:13 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/21 18:44:12 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ void	small_sort(t_stack **a, int argc)
 		return (sa(a));
 	thrd = &(*a)-> next -> next -> valeur;
 	if (*frst < *scnd && *scnd > *thrd && *frst > *thrd)
-		sa(a);
+	{
+		sa(a);;
+	}
 	if (*frst > *scnd && *scnd < *thrd && *frst > *thrd)
 	{
 		rra(a);
