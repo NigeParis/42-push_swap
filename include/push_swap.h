@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 08:50:09 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:09:38 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 typedef struct s_stack
 {
-	int				id;
+	unsigned int	id;
 	int				valeur;
 	struct s_stack	*next;
 }	t_stack;
@@ -62,10 +62,13 @@ int		print_stack(t_stack **stack, char c);
 int		is_stack_sorted(t_stack **a);
 int		find_min_val_pos(int *p, int argc);
 int		find_max_val_pos(int *p, int argc);
+int		find_max_val(int *p, int argc);
+int		find_min_val(int *p, int argc);
+void	rev_stack(t_stack **stack);
 
 
 
-//sort - push tools
+//sort - node tools
 void    sa(t_stack **stack);
 void    sb(t_stack **stack);
 void    ss(t_stack **stack_a, t_stack **stack_b);
@@ -82,11 +85,11 @@ int 	rotate(t_stack **stack);
 int		swap(t_stack **stack);
 int		push(t_stack **stack_dst, t_stack **stack);
 void    del_node(t_stack **stack);
+void	update_node_id(t_stack **stack);
 
 //sort - algo
 void	sort_three(t_stack **a, int argc);
-void	update_node_id(t_stack **stack);
-
+void	sort_five(t_stack **a, t_stack **b, int argc);
 
 
 

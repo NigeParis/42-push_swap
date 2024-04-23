@@ -24,11 +24,14 @@ OBJ_DIR=
 
 INCLUDE= -I./usr/include/
 
-SRC= ./src/main.c ./src/input_get_check.c ./src/input_check.c
-SRC+= ./src/input_clean_zeros.c ./src/input_split.c ./src/tools_stack.c
-SRC+= ./src/tools_list.c ./src/free_errors.c ./src/tools_sort.c
-SRC+= ./src/tools_push.c ./src/tools_rotate.c ./src/tools_rev_rotate.c
-SRC+= ./src/sort_three.c ./src/tools_node.c
+SRC=  ./src/main.c ./src/input/get_check.c ./src/input/check.c
+SRC+= ./src/input/clean_zeros.c ./src/input/get_split.c 
+SRC+= ./src/input/get_stack.c ./src/free_errors.c 
+SRC+= ./src/tools/stack_funtions.c ./src/tools/rev_rotate_node.c
+SRC+= ./src/tools/lst_funtions.c ./src/tools/swap_node.c
+SRC+= ./src/tools/push_node.c ./src/tools/rotate_node.c 
+SRC+= ./src/tools/update_node_id.c ./src/tools/search_in_node.c
+SRC+= ./src/sort_three.c ./src/sort_five.c
 
 BONUS_SRC= 
 

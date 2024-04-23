@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_list.c                                       :+:      :+:    :+:   */
+/*   lst_functions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:08:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 13:57:51 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:12:10 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 t_stack	*ft_lstnewnode(int content, int id)
 {

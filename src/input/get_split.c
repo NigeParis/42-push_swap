@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_split.c                                      :+:      :+:    :+:   */
+/*   get_split.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 21:27:51 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/21 17:58:36 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:08:14 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 char	**data_parsing(int argc, char *argv[])
 {

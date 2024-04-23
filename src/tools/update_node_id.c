@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_node.c                                       :+:      :+:    :+:   */
+/*   update_node_id.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 08:12:49 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/20 08:22:58 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:13:18 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 void	update_node_id(t_stack **stack)
 {

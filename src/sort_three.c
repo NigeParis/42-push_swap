@@ -6,40 +6,37 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:18:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 08:52:03 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:37:10 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	sort_three(t_stack **a, int argc)
+void	sort_three(t_stack **stack, int argc)
 {
-	int	*frst;
-	int	*scnd;
-	int	*thrd;
+	int	node[3];
 
-	frst = &(*a)-> valeur;
-	scnd = &(*a)-> next-> valeur;
-	if (*frst < *scnd && argc == 3)
-		return (sa(a));
-	thrd = &(*a)-> next -> next -> valeur;
-	if (*frst < *scnd && *scnd > *thrd && *frst > *thrd)
+	node[0] = (*stack)-> valeur;
+	node[1] = (*stack)-> next-> valeur;
+	if (argc == 4)
+		node[2] = (*stack)-> next -> next -> valeur;
+	if (node[0] < node[1] && argc == 3)
+		return (sa(stack));
+	if (node[0] < node[1] && node[1] > node[2] && node[0] > node[2])
+		rra(stack);
+	if (node[0] > node[1] && node[1] < node[2] && node[0] > node[2])
+		ra(stack);
+	if (node[0] < node[1] && node[1] > node[2] && node[0] < node[2])
 	{
-		sa(a);;
+		rra(stack);
+		sa(stack);
 	}
-	if (*frst > *scnd && *scnd < *thrd && *frst > *thrd)
+	if (node[0] > node[1] && node[1] < node[2] && node[0] < node[2])
+		sa(stack);
+	if (node[0] > node[1] && node[1] > node[2] && node[0] > node[2])
 	{
-		rra(a);
-		sa(a);
-	}
-	if (*frst < *scnd && *scnd > *thrd && *frst < *thrd)
-		ra(a);
-	if (*frst > *scnd && *scnd < *thrd && *frst < *thrd)
-		rra(a);
-	if (*frst < *scnd && *scnd < *thrd && *frst < *thrd)
-	{
-		ra(a);
-		sa(a);
+		ra(stack);
+		sa(stack);
 	}
 }
 

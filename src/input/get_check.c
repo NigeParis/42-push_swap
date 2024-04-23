@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_get_check.c                                  :+:      :+:    :+:   */
+/*   get_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/19 13:55:08 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:08:10 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 char	*input_parsing(int i, int argc, char *argv[])
 {

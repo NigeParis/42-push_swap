@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean_zero_parsing.c                               :+:      :+:    :+:   */
+/*   clean_zeros.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 16:35:20 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/16 21:04:43 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:08:05 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 char	*cleanzero(char *str)
 {
