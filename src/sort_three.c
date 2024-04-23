@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_mini.c                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:18:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/21 18:44:12 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/23 08:52:03 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	small_sort(t_stack **a, int argc)
+void	sort_three(t_stack **a, int argc)
 {
 	int	*frst;
 	int	*scnd;
