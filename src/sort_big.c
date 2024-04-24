@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:17:02 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/25 00:40:14 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/25 00:58:33 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,22 +57,23 @@ void sort_big(t_stack **a, t_stack **b, int nb_elements)
     t_stack *tmp = *a;
     unsigned int i = 0;
     unsigned int nbr = 0;
-    unsigned int nb = 0;
+    //unsigned int nb = 0;
 
     while (i < (unsigned int)nb_elements) {
         while (tmp) {
-            nbr = tmp->id % 10;
             
-            if ((nbr == 0) && (tmp->id != nb))
+            if ((nbr == 0) && (tmp->id))
             {
+                nbr = tmp->id % 10;
                 ft_printf("--%u-- %u--%u-->%u\n", tmp->id, nbr, i, (tmp->id %10));
                 pb(a, b);
-                tmp = tmp->next;
+                tmp = (*a)->next;
+                nbr = tmp->id % 10;
                 break;
             }
             tmp = tmp->next;
         }
-        tmp = *a; 
+        tmp = (*a); 
         i++;
     }
 }
