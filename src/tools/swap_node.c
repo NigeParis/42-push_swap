@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:21:15 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 13:16:54 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 10:42:51 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sa(t_stack **stack_a)
 	if (!stack_a)
 		return ;
 	if (swap(stack_a))
-		printf("sa\n");
+		ft_printf("sa\n");
 }
 
 void	sb(t_stack **stack_b)
@@ -44,7 +44,7 @@ void	sb(t_stack **stack_b)
 	if (!stack_b)
 		return ;
 	if (swap(stack_b))
-		printf("sb\n");
+		ft_printf("sb\n");
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
@@ -59,5 +59,5 @@ void	ss(t_stack **stack_a, t_stack **stack_b)
 	if (nb_elements_a < 2 || nb_elements_b < 2)
 		return ;
 	if ((swap(stack_a)) && (swap(stack_b)))
-		printf("ss\n");
+		ft_printf("ss\n");
 }

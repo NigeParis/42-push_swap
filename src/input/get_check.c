@@ -6,11 +6,13 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:09:55 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 13:08:10 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 13:54:35 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+
 
 char	*input_parsing(int i, int argc, char *argv[])
 {
@@ -22,6 +24,7 @@ char	*input_parsing(int i, int argc, char *argv[])
 	nb_args = 0;
 	findstr = 0;
 	input_str = join_args(argc, argv);
+	check_first_arg(input_str); 
 	if (is_sign_error(input_str))
 		return (free(input_str), NULL);
 	clean_str = cleanzero(input_str);

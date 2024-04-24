@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:02:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 17:09:25 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:57:35 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	find_min_val_pos(int *p, int argc)
 			pos = i;
 		}
 		i++;
+		
 	}
 	return (pos);
 }

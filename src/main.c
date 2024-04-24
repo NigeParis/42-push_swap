@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 19:24:01 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:23:35 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	main(int argc, char *argv[])
 	if (!a)
 		return (1);
 	nb_elements = ft_lstsizenode(*a) + 1;
-	//ft_printf("HERE %d\n", nb_elements);
 	b = (t_stack **)malloc(sizeof(t_stack));
 	if (!b)
 		return (free_msg(a, b, 1, "Error\n"));

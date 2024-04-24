@@ -26,7 +26,7 @@ INCLUDE= -I./usr/include/
 
 SRC=  ./src/main.c ./src/input/get_check.c ./src/input/check.c
 SRC+= ./src/input/clean_zeros.c ./src/input/get_split.c 
-SRC+= ./src/input/get_stack.c ./src/free_errors.c 
+SRC+= ./src/input/get_stack.c ./src/input/check_first_arg.c ./src/free_errors.c 
 SRC+= ./src/tools/stack_funtions.c ./src/tools/rev_rotate_node.c
 SRC+= ./src/tools/lst_funtions.c ./src/tools/swap_node.c
 SRC+= ./src/tools/push_node.c ./src/tools/rotate_node.c 

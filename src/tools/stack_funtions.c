@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_functions.c                                  :+:      :+:    :+:   */
+/*   stack_funtions.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 13:16:58 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 11:47:33 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int	print_stack(t_stack **stack, char c)
 	t_stack	*tmp;
 
 	if (!stack || !*stack)
-		return (printf("stack %c empty\n\n", c), 1);
+		return (ft_printf("stack %c empty\n\n", c), 1);
 	tmp = *stack;
-	printf("\nstack : %c\n", c);
+	ft_printf("\nstack : %c\n", c);
 	while (tmp)
 	{
 		if (tmp->next)

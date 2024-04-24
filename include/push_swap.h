@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 17:09:38 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:24:12 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct s_stack
 char	*join_args(int argc, char *argv[]);
 char	*input_parsing(int i, int argc, char *argv[]);
 char	*str_to_find(char *str);
+void	check_first_arg(char *input_str);
+int		check_sign_first_arg(char *input_str);
 char	*ft_check_str_for_doubles(char *clean_str, char *findstr, int i);
 int		is_args_numbers(char *str, int *nb_args);
 int		is_args_double(char *s, char *f);
@@ -90,6 +92,8 @@ void	update_node_id(t_stack **stack);
 //sort - algo
 void	sort_three(t_stack **a, int argc);
 void	sort_five(t_stack **a, t_stack **b, int argc);
+void	push_max_five(t_stack **a, t_stack **b, int pos_max);
+void	push_min_five(t_stack **a, t_stack **b, int pos_min);
 
 
 
