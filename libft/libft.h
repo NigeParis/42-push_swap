@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 11:52:56 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/15 17:45:55 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:34:09 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*fun)(void *), void (*del)(void *));
 void	ft_free_double_tab(char *tab[]);
 void	ft_free_tab(char *tab);
 int		ft_strcmp(const char *s1, const char *s2);
+
+//new additions
+unsigned int ft_int_to_unint(int nbr);
+int ft_unint_to_int(unsigned int nbr);
 
 #endif

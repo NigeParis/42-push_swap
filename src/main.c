@@ -6,14 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 14:23:35 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:52:03 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-
-
 
 
 
@@ -45,8 +42,8 @@ int	main(int argc, char *argv[])
 
 //	update_node_id(a);	
 	
-	//  print_stack(a, 'M');
-	//  print_stack(b, 'b');
+	 print_stack(a, 'M');
+	 print_stack(b, 'b');
 	return (free_msg(a, b, 2, ""));
 }
 

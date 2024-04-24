@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 14:54:25 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:59:34 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int		ft_lstsizenode(t_stack *lst);
 void	ft_lstaddnode_back(t_stack **lst, t_stack *new);
 t_stack	*ft_lstlastnode(t_stack *lst);
 void	ft_lstaddnode_front(t_stack **lst, t_stack *new);
-t_stack	*ft_lstnewnode(int content, int id);
+t_stack	*ft_lstnewnode(int content, unsigned int id);
 
 // stack tools - stack a
 t_stack	**getstack_a(int i, int argc, char *argv[]);

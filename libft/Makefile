@@ -31,6 +31,7 @@ SRC+=ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_free_double_tab.c
 SRC+=ft_free_tab.c
 SRC+=ft_strlen.c
 SRC+=ft_strcmp.c
+SRC+=ft_int_to_unint.c ft_unint_to_int.c
 
 BONUS=ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
 BONUS+=ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c

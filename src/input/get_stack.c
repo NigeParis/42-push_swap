@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:58:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 13:08:20 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 17:55:47 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 t_stack	**getstack_a(int i, int argc, char *argv[])
 {
-	char	**tab_str;
-	t_stack	**ptr_stack_a;
-	t_stack	*new_node;
+	char			**tab_str;
+	unsigned int	index;
+	t_stack			**ptr_stack_a;
+	t_stack			*new_node;
 
 	tab_str = data_parsing(argc, argv);
 	if (!tab_str)
@@ -30,7 +31,8 @@ t_stack	**getstack_a(int i, int argc, char *argv[])
 	i--;
 	while (i >= 0)
 	{
-		new_node = (t_stack *)ft_lstnewnode((int)ft_atoi(tab_str[i]), i);
+		index = ft_int_to_unint(ft_atoi(tab_str[i]));
+		new_node = (t_stack *)ft_lstnewnode((int)ft_atoi(tab_str[i]), index);
 		ft_lstaddnode_front(ptr_stack_a, new_node);
 		i--;
 	}
