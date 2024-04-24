@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:02:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 11:57:35 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:47:47 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	find_min_val_pos(int *p, int argc)
 {
-	int i;
+	int	i;
 	int	min;
-	int pos;
+	int	pos;
 
 	min = p[0];
 	pos = 0;
@@ -29,16 +29,15 @@ int	find_min_val_pos(int *p, int argc)
 			pos = i;
 		}
 		i++;
-		
 	}
 	return (pos);
 }
 
 int	find_max_val_pos(int *p, int argc)
 {
-	int i;
+	int	i;
 	int	max;
-	int pos;
+	int	pos;
 
 	max = p[0];
 	pos = 0;
@@ -57,7 +56,7 @@ int	find_max_val_pos(int *p, int argc)
 
 int	find_max_val(int *p, int argc)
 {
-	int i;
+	int	i;
 	int	max;
 
 	max = p[0];
@@ -75,7 +74,7 @@ int	find_max_val(int *p, int argc)
 
 int	find_min_val(int *p, int argc)
 {
-	int i;
+	int	i;
 	int	min;
 
 	min = p[0];

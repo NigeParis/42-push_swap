@@ -6,13 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:23:30 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 11:46:46 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:48:27 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-
-
 
 int	rev_rotate(t_stack **stack)
 {

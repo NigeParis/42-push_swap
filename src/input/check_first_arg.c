@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:54:07 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 13:55:04 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:51:32 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ int	check_sign_first_arg(char *input_str)
 			return (1);
 		i++;
 	}
-	return (0);	
+	return (0);
 }
 
 void	check_first_arg(char *input_str)
 {
 	int	i;
 	int	j;
-	
+
 	i = 0;
 	j = 0;
 	if (input_str[i] == ' ')
@@ -41,11 +41,10 @@ void	check_first_arg(char *input_str)
 		{
 			input_str[j] = input_str[i];
 			j++;
-			i++;			
+			i++;
 		}
-		input_str[j] = '\0';		
+		input_str[j] = '\0';
 	}
 	if (check_sign_first_arg(input_str))
 		input_str[0] = '\0';
 }
-

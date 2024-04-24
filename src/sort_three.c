@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:18:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 14:27:22 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:40:53 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,28 @@
 
 void	sort_three(t_stack **stack, int argc)
 {
-	int	node[3];
+	int	nde[3];
 
-	node[0] = (*stack)-> valeur;
-	node[1] = (*stack)-> next-> valeur;
-	if (node[0] > node[1] && argc < 4)
+	nde[0] = (*stack)-> valeur;
+	nde[1] = (*stack)-> next-> valeur;
+	if (nde[0] > nde[1] && argc < 4)
 		return (sa(stack));
 	if (argc > 3)
-		node[2] = (*stack)-> next -> next -> valeur;
-	if ((node[0] < node[1] && node[1] > node[2] && node[0] > node[2]) && argc > 3)
+		nde[2] = (*stack)-> next -> next -> valeur;
+	if ((nde[0] < nde[1] && nde[1] > nde[2] && nde[0] > nde[2]) && argc > 3)
 		rra(stack);
-	if ((node[0] > node[1] && node[1] < node[2] && node[0] > node[2]) && argc > 3)
+	if ((nde[0] > nde[1] && nde[1] < nde[2] && nde[0] > nde[2]) && argc > 3)
 		ra(stack);
-	if ((node[0] < node[1] && node[1] > node[2] && node[0] < node[2]) && argc > 3)
+	if ((nde[0] < nde[1] && nde[1] > nde[2] && nde[0] < nde[2]) && argc > 3)
 	{
 		rra(stack);
 		sa(stack);
 	}
-	if ((node[0] > node[1] && node[1] < node[2] && node[0] < node[2]) && argc > 3)
+	if ((nde[0] > nde[1] && nde[1] < nde[2] && nde[0] < nde[2]) && argc > 3)
 		sa(stack);
-	if ((node[0] > node[1] && node[1] > node[2] && node[0] > node[2]) && argc > 3)
+	if ((nde[0] > nde[1] && nde[1] > nde[2] && nde[0] > nde[2]) && argc > 3)
 	{
 		ra(stack);
 		sa(stack);
 	}
 }
-
-
-
-
-
-
-

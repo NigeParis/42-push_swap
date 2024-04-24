@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 11:47:33 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:46:25 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void	rev_stack(t_stack **stack)
 {
-	t_stack *prev;
-	t_stack *temp;
-	
+	t_stack	*prev;
+	t_stack	*temp;
+
 	if (!stack)
 		return ;
 	if (ft_lstsizenode(*stack) < 3)
 		return ((void)rotate(stack));
 	prev = *stack;
-	temp = (*stack) -> next;
+	temp = (*stack)->next;
 	*stack = (*stack)->next->next;
 	prev->next = NULL;
 	while ((*stack)->next != NULL)
 	{
 		temp->next = prev;
 		prev = temp;
-		temp = *stack;		
+		temp = *stack;
 		*stack = (*stack)->next;
 	}
 	temp->next = prev;
@@ -83,8 +83,9 @@ void	clear_stack(t_stack **stack)
 
 int	is_stack_sorted(t_stack **a)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		nbr;
+
 	tmp = *a;
 	while (tmp)
 	{
@@ -92,12 +93,11 @@ int	is_stack_sorted(t_stack **a)
 		if (tmp->next)
 		{
 			tmp = tmp->next;
-			if (nbr > tmp->valeur)		
+			if (nbr > tmp->valeur)
 				return (0);
 		}
 		else
-			break;
+			break ;
 	}
 	return (1);
 }
-

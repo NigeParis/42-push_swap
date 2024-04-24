@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 14:24:12 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 14:54:25 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,33 +68,30 @@ int		find_max_val(int *p, int argc);
 int		find_min_val(int *p, int argc);
 void	rev_stack(t_stack **stack);
 
-
-
 //sort - node tools
-void    sa(t_stack **stack);
-void    sb(t_stack **stack);
-void    ss(t_stack **stack_a, t_stack **stack_b);
-void    pa(t_stack **stack_a, t_stack **stack_b);
-void    pb(t_stack **stack_a, t_stack **stack_b);
-void    ra(t_stack **stack_a);
-void    rb(t_stack **stack_b);
-void    rr(t_stack **stack_a, t_stack **stack_b);
+void	sa(t_stack **stack);
+void	sb(t_stack **stack);
+void	ss(t_stack **stack_a, t_stack **stack_b);
+void	pa(t_stack **stack_a, t_stack **stack_b);
+void	pb(t_stack **stack_a, t_stack **stack_b);
+void	ra(t_stack **stack_a);
+void	rb(t_stack **stack_b);
+void	rr(t_stack **stack_a, t_stack **stack_b);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 int		rev_rotate(t_stack **stack);
-int 	rotate(t_stack **stack);
+int		rotate(t_stack **stack);
 int		swap(t_stack **stack);
 int		push(t_stack **stack_dst, t_stack **stack);
-void    del_node(t_stack **stack);
+void	del_node(t_stack **stack);
 void	update_node_id(t_stack **stack);
 
 //sort - algo
 void	sort_three(t_stack **a, int argc);
 void	sort_five(t_stack **a, t_stack **b, int argc);
+void	get_values_in_stack(t_stack **a, int *p, int stack_size);
 void	push_max_five(t_stack **a, t_stack **b, int pos_max);
 void	push_min_five(t_stack **a, t_stack **b, int pos_min);
-
-
 
 #endif
