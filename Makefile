@@ -31,7 +31,7 @@ SRC+= ./src/tools/stack_funtions.c ./src/tools/rev_rotate_node.c
 SRC+= ./src/tools/lst_funtions.c ./src/tools/swap_node.c
 SRC+= ./src/tools/push_node.c ./src/tools/rotate_node.c 
 SRC+= ./src/tools/update_node_id.c ./src/tools/search_in_node.c
-SRC+= ./src/sort_three.c ./src/sort_five.c
+SRC+= ./src/sort_three.c ./src/sort_five.c ./src/sort_big.c
 
 BONUS_SRC= 
 

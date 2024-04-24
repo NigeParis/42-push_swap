@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 17:59:34 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 22:20:56 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,6 @@ void	sort_five(t_stack **a, t_stack **b, int argc);
 void	get_values_in_stack(t_stack **a, int *p, int stack_size);
 void	push_max_five(t_stack **a, t_stack **b, int pos_max);
 void	push_min_five(t_stack **a, t_stack **b, int pos_min);
+void    sort_big (t_stack **a, t_stack **b, int	nb_elements);
 
 #endif
