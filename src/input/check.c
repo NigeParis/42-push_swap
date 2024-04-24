@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:14:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 13:07:56 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 21:52:57 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	is_over_int_limits(char *str)
 	char		nbr[BUFFER];
 	long int	chk_nbr;
 
-	i = 0;
+	i = -1;
 	chk_nbr = 0;
 	while (str[++i])
 	{
