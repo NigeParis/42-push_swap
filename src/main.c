@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 17:52:03 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/24 18:14:08 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,13 @@ int	main(int argc, char *argv[])
 		sort_five (a, b, nb_elements);
 
 
-//	update_node_id(a);	
 	
 	 print_stack(a, 'M');
 	 print_stack(b, 'b');
+	//update_node_id(a);	
+
+		 print_stack(a, 'A');
+	 print_stack(b, 'B');
 	return (free_msg(a, b, 2, ""));
 }
 
