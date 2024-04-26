@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:07:11 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/23 14:46:03 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/26 16:50:40 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,16 @@ void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!stack_b)
 		return ;
-	if (push(stack_a, stack_b))
-		ft_printf("pa\n");
+	push(stack_a, stack_b);
+	//if (push(stack_a, stack_b))
+		//ft_printf("pa\n");
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!stack_a)
 		return ;
-	if (push(stack_b, stack_a))
-		ft_printf("pb\n");
+	push(stack_b, stack_a);
+	//if (push(stack_b, stack_a))
+		//ft_printf("pb\n");
 }

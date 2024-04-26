@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:17:02 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/26 10:23:02 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/26 22:17:26 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,24 @@ void sort_big_nbr(t_stack **a, t_stack **b, int nb_elements, unsigned int index,
     tmp = a;
     if (!*a)
         return ;
-    while (i < (unsigned int)nb_elements) {
+
+    while (i < (unsigned int)nb_elements) 
+    {
         while (tmp && i < (unsigned int)nb_elements) 
         {
             nbr = (*tmp)->id %(10 * multiply);
             if ((nbr / multiply)== index)
             {
+  //              ft_printf("Stack A - multiply: %u nbr:%u  index: %u   id:%u  char: %u\n",multiply, (nbr / multiply), index, (*tmp)->id, (*tmp)->id %10 *multiply);
+            
                 pb(tmp, b);
+                print_stack(tmp, 'T');
+                print_stack(b, 'B');
                 break;
             }
             else
             {
+                //ft_printf("%u\n", (nbr / multiply));
                 if ((*tmp)->next != NULL)
                 {
                     ra(a);
@@ -52,92 +59,67 @@ void sort_big_nbr(t_stack **a, t_stack **b, int nb_elements, unsigned int index,
 
 
 
-void sort_big_nbr2(t_stack **a, t_stack **b, int nb_elements, unsigned int index, unsigned int multiply) 
+
+
+
+void sort_big(t_stack **a, t_stack **b, unsigned int stack_size) 
 {
-    t_stack **tmp;
-    unsigned int i = 0;
-    unsigned int nbr = 0;
-    tmp = b;
-    if (!*b)
-        return ;
-    while (i < (unsigned int)nb_elements) {
-        while (tmp && i < (unsigned int)nb_elements) 
-        {
-            nbr = (*tmp)->id %(10 * multiply);
-            if ((nbr / multiply)== index)
-            {
-                pa(a, tmp);
-                break;
-            }
-            else
-            {
-                if ((*tmp)->next != NULL)
-                {
-                    rb(b);
-                    tmp = &(*tmp)->next;
-                }  
-                break ;
-            }
-            
-        }
-        if ((*b))
-            tmp = &(*b); 
-        else
-            tmp = 0;
-        i++;
-    }
-}
+    int i = 0;
+    int count = 0;
+    unsigned int multiply = 1;
+    int nb_elements = stack_size - 1;    ft_printf("END\n");
 
-
-
-void sort_big(t_stack **a, t_stack **b, int nb_elements) 
-{
-    unsigned int i = 0;
-    unsigned int in = 9;
-    unsigned int n = 1;
+    int in = 0;
     //unsigned int loop = 1;
+    ft_printf("nb_elements = %u\n", nb_elements);
+	print_stack(a, 'Z');
 
-    while (in > 0)
+
+    while (count < 2)
     {
-        i = 0;
-        while (i < 10)
+        while (in < 10)
         {
-            sort_big_nbr(a, b, nb_elements, in, n);
+            i = 0;
+            while (i < nb_elements)
+            {
+                sort_big_nbr(a, b, nb_elements, in, multiply);
+                i++;
+                rra(a);
+            
+            }
+            in++;
+        }
+        ft_printf("END stack A----------------------------------\n");
+
+    	print_stack(b, 'B');
+        print_stack(a, 'a');
+        // //rev_stack(b);
+	    // print_stack(b, 'b');
+    
+        i = 0;
+        while (i <= nb_elements )
+        {
+            pa(a, b);
             i++;
         
         }
-        in--;
-    }
-
-	print_stack(b, 'b');
     
-    in = 9;
-   
-    while (in > 0)
-    {
+
         i = 0;
-        while (i < 10)
-        {
-            sort_big_nbr2(a, b, nb_elements, in, n);
-            i++;
-        
-        }
-        in--;
+        in = 0;    
+        ft_printf("END stack B---------------->>>>\n");
+        if (a || *a)
+            multiply = multiply * 10;
+        count++;
+        print_stack(b, 'B');
+        print_stack(a, 'a');
     }
 
-    
-    // n = i;
-    // while (n > 1)
-    // {
-	//     pa(a,b);
-    //     n--;
-    // }
-	
-	print_stack(a, 'M');
-	print_stack(b, 'b');
-
-    
 }
+
+  
+    
+
     
     
     
