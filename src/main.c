@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/25 13:11:29 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/04/26 09:38:06 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	main(int argc, char *argv[])
 	
 	
 	
-	print_stack(a, 'M');
-	print_stack(b, 'b');
+	// print_stack(a, 'M');
+	// print_stack(b, 'b');
 	//update_node_id(a);	
 	//ft_printf("---int---->%d\n", ft_unint_to_int(ft_int_to_unint(ft_atoi(argv[1]))));
 	//ft_printf("----unit-->%u\n", ft_int_to_unint(ft_atoi(argv[1])));
