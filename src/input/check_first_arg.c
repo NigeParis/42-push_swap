@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:54:07 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 14:51:32 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/03 15:13:26 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	check_sign_first_arg(char *input_str)
 	int	i;
 
 	i = 1;
-	while (input_str && input_str[i] != ' ')
+	while (input_str && input_str[i] && input_str[i] != ' ')
 	{
 		if (input_str[i] == '-' || input_str[i] == '+')
 			return (1);
