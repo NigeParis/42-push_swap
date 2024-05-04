@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   update_node_id.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 09:25:41 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 11:07:17 by nrobinso         ###   ########.fr       */
+/*   Created: 2024/04/20 08:12:49 by nrobinso          #+#    #+#             */
+/*   Updated: 2024/05/04 14:55:50 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#include "../../include/checker.h"
 
-# include <unistd.h>
-# include <stdlib.h>
+void	update_node_id(t_stack **stack)
+{
+	t_stack	*tmp;
+	int		i;
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
-
-char	*get_next_line(int fd);
-size_t	ft_gnl_strlen(char *str);
-char	*ft_gnl_strjoin(char *s1, char *s2);
-char	*ft_gnl_strdup(char *s1);
-size_t	ft_gnl_strlcpy(char *dst, char *src, size_t dstsize);
-char	*ft_gnl_strchr(char *s, int c);
-
-#endif
+	i = ft_lstsizenode(*stack) - 1;
+	tmp = *stack;
+	while (tmp)
+	{
+		if (tmp)
+		{
+			tmp->id = i;
+			tmp = tmp->next;
+		}
+		else
+			break ;
+		i--;
+	}	
+}

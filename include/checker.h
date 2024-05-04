@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 15:01:37 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:01:00 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_H
+# define CHECKER_H
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
@@ -87,12 +87,8 @@ int		push(t_stack **stack_dst, t_stack **stack);
 void	del_node(t_stack **stack);
 void	update_node_id(t_stack **stack);
 
-//sort - algo
-void	sort_three(t_stack **a, int argc);
-void	sort_five(t_stack **a, t_stack **b, int argc);
-void	get_values_in_stack(t_stack **a, int *p, int stack_size);
-void	push_max_five(t_stack **a, t_stack **b, int pos_max);
-void	push_min_five(t_stack **a, t_stack **b, int pos_min);
-void	sort_big(t_stack **a, t_stack **b, unsigned int nb_elements);
+//checker - functions
+int		checker(t_stack **a, t_stack **b, char *action, int flag);
+void	action_checker(t_stack **a, t_stack **b, char *action);
 
 #endif

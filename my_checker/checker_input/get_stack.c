@@ -6,11 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 12:58:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 15:06:29 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:07:14 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "../../include/checker.h"
 
 t_stack	**getstack_a(int i, int argc, char *argv[])
 {
