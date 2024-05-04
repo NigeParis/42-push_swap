@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:17:02 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 09:01:03 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/04 09:24:58 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask)
 {
-	t_stack	*tmp;
-	unsigned int    bit_pos;
+	t_stack			*tmp;
+	unsigned int	bit_pos;
 	unsigned int	node_pos;
 	unsigned int	size_in_bits;
-	
+
 	bit_pos = 0;
 	size_in_bits = sizeof(int) * 8;
 	while (bit_pos < size_in_bits)
@@ -26,12 +26,12 @@ void	sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask)
 		node_pos = 0;
 		while (node_pos < nodes)
 		{
-		    tmp = *a;
+			tmp = *a;
 			if (((tmp->id >> bit_pos) & mask) == 1)
 				ra(a);
 			else
 				pb(a, b);
-            node_pos++;
+			node_pos++;
 		}
 		while ((*b))
 			pa(a, b);
@@ -41,22 +41,12 @@ void	sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask)
 	}
 }
 
-void sort_big(t_stack **a, t_stack **b, unsigned int stack_size) 
+void	sort_big(t_stack **a, t_stack **b, unsigned int stack_size)
 {
-    int nb_nodes;
-    
+	int	nb_nodes;
+
 	nb_nodes = stack_size - 1;
-    sort(a, b, nb_nodes, 0b00000001);
+	sort(a, b, nb_nodes, 0b00000001);
 	print_stack(a, 'A');
 	print_stack(b, 'B');
 }
-
-  
-    
-
-    
-    
-    
-
-    
-

@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 10:23:30 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/02 21:22:17 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/04 09:26:59 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	rra(t_stack **stack_a)
 		return ;
 	if (rev_rotate(stack_a))
 		ft_printf("rra\n");
-		//ft_printf("");
 }
 
 void	rrb(t_stack **stack_b)
@@ -54,8 +53,6 @@ void	rrb(t_stack **stack_b)
 		return ;
 	if (rev_rotate(stack_b))
 		ft_printf("rrb\n");
-		//ft_printf("");
-
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)
