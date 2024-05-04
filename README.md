@@ -47,3 +47,17 @@ following operations at your disposal:<br>
 &nbsp;   The last element becomes the first one.<br>
 
 **rrr** : rra and rrb at the same time.<br>
+
+
+https://github.com/o-reo/push_swap_visualizer
+
+
+
+
+![Screenshot from 2024-05-04 15-28-26](https://github.com/NigeParis/42-push_swap/assets/128382762/2c6d8a68-4048-4bd8-bd10-7abc98aaa716)
+
+
+![Screenshot from 2024-05-04 15-29-17](https://github.com/NigeParis/42-push_swap/assets/128382762/ea74a290-0ca0-44bb-b919-b7401b9aa1b9)
+
+
+![sorted](https://github.com/NigeParis/42-push_swap/assets/128382762/55f20eb9-2afe-444d-8ec9-3e4d62880274)
