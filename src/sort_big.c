@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:17:02 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/03 16:16:29 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/04 09:01:03 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void sort_big(t_stack **a, t_stack **b, unsigned int stack_size)
     
 	nb_nodes = stack_size - 1;
     sort(a, b, nb_nodes, 0b00000001);
-	// print_stack(a, 'A');
-	// print_stack(b, 'B');
+	print_stack(a, 'A');
+	print_stack(b, 'B');
 }
 
   
