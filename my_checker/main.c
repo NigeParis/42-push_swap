@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 14:52:58 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/04 18:24:39 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	main(int argc, char *argv[])
 {
 	t_stack	**a;
 	t_stack	**b;
-	int		nb_elements;
 	char	*action;
 
 	action = NULL;
@@ -25,7 +24,6 @@ int	main(int argc, char *argv[])
 	a = getstack_a(0, argc, argv);
 	if (!a)
 		return (1);
-	nb_elements = ft_lstsizenode(*a) + 1;
 	b = (t_stack **)malloc(sizeof(t_stack));
 	if (!b)
 		return (free_msg(a, b, 1, "Error\n"));

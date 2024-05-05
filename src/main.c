@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 09:30:02 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:43:42 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char *argv[])
 	*b = NULL;
 	if (is_stack_sorted(a))
 		return (free_msg(a, b, 2, ""));
+	update_node_id(a);
+	//print_stack(a, 'A');	
 	if (nb_elements < 5)
 		sort_three(a, nb_elements);
 	if (nb_elements > 4 && nb_elements < 7)

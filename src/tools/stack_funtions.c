@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 08:42:32 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/02 21:19:17 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 00:13:56 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int	print_stack(t_stack **stack, char c)
 		if (tmp->next)
 		{
 			ft_printf("id: %u ", tmp->id);
+			ft_printf("new_id: %u ", tmp->new_id);
 			ft_printf("nbr: %d ", tmp->valeur);
 			ft_printf("add: %p \n", tmp->next);
 			tmp = tmp->next;
@@ -56,6 +57,7 @@ int	print_stack(t_stack **stack, char c)
 		else
 		{
 			ft_printf("id: %u ", tmp->id);
+			ft_printf("new_id: %u ", tmp->new_id);
 			ft_printf("nbr: %d ", tmp->valeur);
 			ft_printf("add: %p \n\n", tmp->next);
 			break ;

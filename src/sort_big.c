@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:17:02 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/05 12:08:56 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:05:52 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask)
 		while (node_pos < nodes)
 		{
 			tmp = *a;
-			if (((tmp->id >> bit_pos) & mask) == 1)
+			if (((tmp->new_id >> bit_pos) & mask) == 1)
 				ra(a);
 			else
 				pb(a, b);
@@ -63,6 +63,6 @@ void	sort_big(t_stack **a, t_stack **b, unsigned int stack_size)
 	nb_nodes = stack_size - 1;
 	sort(a, b, nb_nodes, 0b00000001);
 
-	update_node_id(a);
+	// update_node_id(a);
 	print_stack(a, 'A');
 }

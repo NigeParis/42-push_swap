@@ -6,80 +6,45 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 08:12:49 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/05 14:15:13 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:15:09 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	update_min_val_pos(t_stack **stack, unsigned int min)
+void	find_smaller_nbr(t_stack *tmp, unsigned int nbr)
 {
-	t_stack		*tmp;
+	unsigned int	i;
 
-	tmp = *stack;
-	while (tmp)
-	{
-		if (tmp)
-		{	
-			if (tmp->id == min)
-				tmp->new_id = 0;
+		i = 1;
+		while (tmp)
+		{
+			if (tmp->id < nbr)
+				i++;
 			tmp = tmp->next;
 		}
-		else
-			break ;	
-	}	
+		tmp2->new_id = i;
 }
 
-unsigned int	find_next_min(t_stack **stack, unsigned int min, unsigned int index)
+void	get_new_index(t_stack **stack)
 {
-	t_stack			*tmp;
-	unsigned int 	loop;
+	t_stack	*tmp;
+	t_stack	*tmp2;
+	unsigned int	nbr;
 
-	tmp = *stack;
-	loop = 0;
-
-	while (tmp)
+	tmp2 = *stack;
+	nbr = tmp2->id;
+	while (1)
 	{
-		if (tmp)
-		{	
-			ft_printf("index:%u id :%u  min:%u\n",index,  tmp->id, min);
-			if (tmp->id == min)
-			{
-				tmp->new_id = index;
-				index++;
-			}
-			tmp = tmp->next;
-		}
+		tmp = *stack;
+		
+		if (tmp2->next)
+			nbr = tmp2->next->id;
 		else
-			break ;	
-		min++;	
+			break ;
+		tmp2 = tmp2->next;
 	}
-	return (min);
 }
-
-unsigned int 	get_new_index(t_stack **stack, unsigned int min)
-{
-	t_stack		*tmp;
-	unsigned int index;
-	unsigned int new_min;
-
-	index = 1;
-	tmp = *stack;
-	while (tmp)
-	{
-		if (tmp)
-		{	
-			new_min = find_next_min(stack, min, index);
-			tmp = tmp->next;
-			min++;
-		}
-		else
-			break ;	
-	}	
-	return (new_min);
-}
-
-
 
 
 
@@ -87,15 +52,9 @@ void	update_node_id(t_stack **stack)
 {
 	t_stack			*tmp;
 	unsigned int	i;
-	int	y;
-	unsigned int	min;
-	unsigned int	new_min;
-
-
+	
 	tmp = *stack;
-	y = 1;
 	i = ft_lstsizenode(*stack);
-	min = find_min_val(stack, i);
 	while (tmp)
 	{
 		if (tmp)
@@ -107,12 +66,5 @@ void	update_node_id(t_stack **stack)
 			break ;
 		i++;
 	}	
-	update_min_val_pos(stack, min);
-
-	new_min = get_new_index(stack, (min + y));
-	min = new_min + 1;
-	new_min = get_new_index(stack, (min));
-	
-	
-	
+	get_new_index(stack);
 }
