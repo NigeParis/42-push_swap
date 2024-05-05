@@ -6,20 +6,20 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 08:12:49 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/05 18:15:09 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:27:02 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	find_smaller_nbr(t_stack *tmp, unsigned int nbr)
+void	find_smaller_nbr(t_stack *tmp, t_stack *tmp2, int nbr)
 {
-	unsigned int	i;
+	int	i;
 
 		i = 1;
 		while (tmp)
 		{
-			if (tmp->id < nbr)
+			if (tmp->id < (unsigned int)nbr)
 				i++;
 			tmp = tmp->next;
 		}
@@ -30,14 +30,14 @@ void	get_new_index(t_stack **stack)
 {
 	t_stack	*tmp;
 	t_stack	*tmp2;
-	unsigned int	nbr;
+	int	nbr;
 
 	tmp2 = *stack;
 	nbr = tmp2->id;
-	while (1)
+	while (tmp2)
 	{
 		tmp = *stack;
-		
+		find_smaller_nbr(tmp, tmp2, nbr);
 		if (tmp2->next)
 			nbr = tmp2->next->id;
 		else
@@ -51,7 +51,7 @@ void	get_new_index(t_stack **stack)
 void	update_node_id(t_stack **stack)
 {
 	t_stack			*tmp;
-	unsigned int	i;
+	int	i;
 	
 	tmp = *stack;
 	i = ft_lstsizenode(*stack);

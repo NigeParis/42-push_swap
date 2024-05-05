@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:17:02 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/05 18:05:52 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:49:56 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask)
 	unsigned int	size_in_bits;
 
 	bit_pos = 0;
-	size_in_bits = sizeof(int) * 8;
+	size_in_bits = sizeof(UINT32_MAX) * 8;
 	while (bit_pos < (size_in_bits))
 	{
 		node_pos = 0;
@@ -64,5 +64,5 @@ void	sort_big(t_stack **a, t_stack **b, unsigned int stack_size)
 	sort(a, b, nb_nodes, 0b00000001);
 
 	// update_node_id(a);
-	print_stack(a, 'A');
+	//print_stack(a, 'A');
 }

@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 15:01:00 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:25:10 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 typedef struct s_stack
 {
 	unsigned int	id;
+	int				new_id;
 	int				valeur;
 	struct s_stack	*next;
 }	t_stack;
