@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:02:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 14:47:47 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:31:37 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,19 +72,22 @@ int	find_max_val(int *p, int argc)
 	return (max);
 }
 
-int	find_min_val(int *p, int argc)
+int	find_min_val(t_stack **a, int argc)
 {
-	int	i;
-	int	min;
+	unsigned int	i;
+	unsigned int	min;
+	t_stack 		*tmp;
 
-	min = p[0];
+	tmp = *a;
+	min = UINT32_MAX;
 	i = 0;
-	while (i < argc - 1)
+	while (i < (unsigned int)argc - 1)
 	{
-		if (p[i] < min)
+		if (tmp->id < min)
 		{
-			min = p[i];
+			min = tmp->id;
 		}
+		tmp=tmp->next;
 		i++;
 	}
 	return (min);

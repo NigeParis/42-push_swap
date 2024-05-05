@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 15:01:37 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:24:17 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 typedef struct s_stack
 {
 	unsigned int	id;
+	unsigned int	new_id;
 	int				valeur;
 	struct s_stack	*next;
 }	t_stack;
@@ -65,7 +66,7 @@ int		is_stack_sorted(t_stack **a);
 int		find_min_val_pos(int *p, int argc);
 int		find_max_val_pos(int *p, int argc);
 int		find_max_val(int *p, int argc);
-int		find_min_val(int *p, int argc);
+int		find_min_val(t_stack **stack, int argc);
 void	rev_stack(t_stack **stack);
 
 //sort - node tools
