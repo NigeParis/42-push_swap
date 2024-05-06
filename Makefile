@@ -51,67 +51,68 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@echo "Creating FILE .......\n"
-	@make -C ./libft/ bonus
-	@make -C ./ft_printf/ all
-	@make -C ./get_next_line/ all
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(FT_PRINTF) $(GET_NEXT_LINE)
+	@make -C ./libft/ bonus >/dev/null
+	@make -C ./ft_printf/ all >/dev/null
+	@make -C ./get_next_line/ all >/dev/null
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ) $(LIBFT) $(FT_PRINTF) $(GET_NEXT_LINE) \
+	>/dev/null
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 	@echo "COMPILE all c files to .o FILES .......\n"
-	@$(CC) $(CFLAGS) -c $(SRCS)  $(HEAD)
+	@$(CC) $(CFLAGS) -c $(SRCS)  $(HEAD) >/dev/null
 
 bonus: $(BONUS)
 
 $(BONUS): $(BONUS_OBJ)
 	@echo "Creating FILE .......\n"
-	@make -C ./libft/ bonus
-	@make -C ./ft_printf/ all
-	@make -C ./get_next_line/ all
-	@make -C ./my_checker/ all
+	@make -C ./libft/ bonus >/dev/null
+	@make -C ./ft_printf/ all >/dev/null
+	@make -C ./get_next_line/ all >/dev/null
+	@make -C ./my_checker/ all >/dev/null
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 	@echo "COMPILE all c files to .o FILES .......\n"
-	@$(CC) $(CFLAGS) -c $(BONUS_SRCS) $(HEAD_BONUS)
+	@$(CC) $(CFLAGS) -c $(BONUS_SRCS) $(HEAD_BONUS) >/dev/null
 
 
 counter: $(COUNTER)
 
 $(COUNTER): $(BONUS_OBJ)
 	@echo "Creating FILE .......\n"
-	@make -C ./libft/ bonus
-	@make -C ./ft_printf/ all
-	@make -C ./get_next_line/ all
-	@make -C ./my_checker/ bonus
+	@make -C ./libft/ bonus >/dev/null
+	@make -C ./ft_printf/ all >/dev/null
+	@make -C ./get_next_line/ all >/dev/null
+	@make -C ./my_checker/ bonus >/dev/null
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 	@echo "COMPILE all c files to .o FILES .......\n"
-	@$(CC) $(CFLAGS) -c $(BONUS_SRCS) $(HEAD_BONUS)
+	@$(CC) $(CFLAGS) -c $(BONUS_SRCS) $(HEAD_BONUS) >/dev/null
 
 
 
 lib:
-	@make -C ./libft/ re 
-	@make -C ./ft_printf/ re
-	@make -C ./get_next_line/ re
+	@make -C ./libft/ re >/dev/null
+	@make -C ./ft_printf/ re >/dev/null
+	@make -C ./get_next_line/ re >/dev/null
 
 libclean:
-	@make -C ./libft/ clean
-	@make -C ./ft_printf/ clean
-	@make -C ./get_next_line/ clean
+	@make -C ./libft/ clean >/dev/null
+	@make -C ./ft_printf/ clean >/dev/null
+	@make -C ./get_next_line/ clean >/dev/null
 
 libfclean:
-	@make -C ./libft/ fclean
-	@make -C ./ft_printf/ fclean
-	@make -C ./get_next_line/ fclean
+	@make -C ./libft/ fclean >/dev/null
+	@make -C ./ft_printf/ fclean >/dev/null
+	@make -C ./get_next_line/ fclean >/dev/null
 
 clean: libclean
-	@rm -f $(OBJ)
-	@make -C ./my_checker/ clean
+	@rm -f $(OBJ) >/dev/null
+	@make -C ./my_checker/ clean >/dev/null
 
 fclean:clean libfclean
 	@echo "FCLEAN all .o et .a files .......\n"
-	@rm -f $(NAME)
-	@make -C ./my_checker/ fclean
+	@rm -f $(NAME) >/dev/null
+	@make -C ./my_checker/ fclean >/dev/null
 
 re: fclean libfclean lib all
 	@echo "All erased and re-compiled .......\n"
