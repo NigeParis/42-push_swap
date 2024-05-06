@@ -6,28 +6,21 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:17:02 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/05 19:49:56 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 10:10:22 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
+void	sort_big(t_stack **a, t_stack **b, unsigned int stack_size)
+{
+	int	nb_nodes;
 
-// void	update_new_id(t_stack **a)
-// {
+	nb_nodes = stack_size - 1;
+	rdix_sort(a, b, nb_nodes, 0b00000001);
+}
 
-
-
-
-
-
-
-
-	
-// }
-
-
-void	sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask)
+void	rdix_sort(t_stack **a, t_stack **b, unsigned int nds, unsigned int mask)
 {
 	t_stack			*tmp;
 	unsigned int	bit_pos;
@@ -39,7 +32,7 @@ void	sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask)
 	while (bit_pos < (size_in_bits))
 	{
 		node_pos = 0;
-		while (node_pos < nodes)
+		while (node_pos < nds)
 		{
 			tmp = *a;
 			if (((tmp->new_id >> bit_pos) & mask) == 1)
@@ -54,15 +47,4 @@ void	sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask)
 			break ;
 		bit_pos++;
 	}
-}
-
-void	sort_big(t_stack **a, t_stack **b, unsigned int stack_size)
-{
-	int	nb_nodes;
-
-	nb_nodes = stack_size - 1;
-	sort(a, b, nb_nodes, 0b00000001);
-
-	// update_node_id(a);
-	//print_stack(a, 'A');
 }

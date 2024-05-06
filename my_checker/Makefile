@@ -2,7 +2,7 @@
 ## ARGUMENTS
 
 NAME= ../checker
-BONUS= push_bonus
+BONUS=../checker_counter
 CFLAGS= -Wall -Wextra -Werror -g3
 
 SRCS=$(addprefix $(SRC_DIR), $(SRC))
@@ -34,7 +34,16 @@ SRC+= ./checker_tools/push_node.c ./checker_tools/rotate_node.c
 SRC+= ./checker_tools/update_node_id.c ./checker_tools/search_in_node.c
 SRC+= ./checker_actions.c
 
-BONUS_SRC= 
+BONUS_SRC=  ./checker_counter.c
+BONUS_SRC+= ./checker_input/get_check.c 
+BONUS_SRC+= ./checker_input/check.c ./free_errors.c 
+BONUS_SRC+= ./checker_input/clean_zeros.c ./checker_input/get_split.c 
+BONUS_SRC+= ./checker_input/get_stack.c ./checker_input/check_first_arg.c 
+BONUS_SRC+= ./checker_tools/stack_funtions.c ./checker_tools/rev_rotate_node.c
+BONUS_SRC+= ./checker_tools/lst_funtions.c ./checker_tools/swap_node.c
+BONUS_SRC+= ./checker_tools/push_node.c ./checker_tools/rotate_node.c 
+BONUS_SRC+= ./checker_tools/update_node_id.c ./checker_tools/search_in_node.c
+BONUS_SRC+= ./checker_actions.c
 
 LIBFT= ../libft/libft.a
 FT_PRINTF= ../ft_printf/libftprintf.a

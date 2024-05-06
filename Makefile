@@ -3,6 +3,7 @@
 
 NAME= push_swap
 BONUS= checker
+COUNTER= checker_counter
 CFLAGS= -Wall -Wextra -Werror -g3
 
 SRCS=$(addprefix $(SRC_DIR), $(SRC))
@@ -24,7 +25,7 @@ OBJ_DIR=
 
 INCLUDE= -I./usr/include/
 
-SRC=  ./src/main.c ./src/input/get_check.c ./src/input/check.c
+SRC=  ./src/pushswap.c ./src/input/get_check.c ./src/input/check.c
 SRC+= ./src/input/clean_zeros.c ./src/input/get_split.c 
 SRC+= ./src/input/get_stack.c ./src/input/check_first_arg.c ./src/free_errors.c 
 SRC+= ./src/tools/stack_funtions.c ./src/tools/rev_rotate_node.c
@@ -71,6 +72,22 @@ $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 	@echo "COMPILE all c files to .o FILES .......\n"
 	@$(CC) $(CFLAGS) -c $(BONUS_SRCS) $(HEAD_BONUS)
 
+
+counter: $(COUNTER)
+
+$(COUNTER): $(BONUS_OBJ)
+	@echo "Creating FILE .......\n"
+	@make -C ./libft/ bonus
+	@make -C ./ft_printf/ all
+	@make -C ./get_next_line/ all
+	@make -C ./my_checker/ bonus
+
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
+	@echo "COMPILE all c files to .o FILES .......\n"
+	@$(CC) $(CFLAGS) -c $(BONUS_SRCS) $(HEAD_BONUS)
+
+
+
 lib:
 	@make -C ./libft/ re 
 	@make -C ./ft_printf/ re
@@ -98,4 +115,4 @@ fclean:clean libfclean
 re: fclean libfclean lib all
 	@echo "All erased and re-compiled .......\n"
 
-.PHONY: all bonus lib libclean clean fclean re
+.PHONY: all bonus counter lib libclean clean fclean re

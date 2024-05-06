@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 08:30:53 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/06 08:38:22 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 10:15:45 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	is_swap_action(t_stack **a, t_stack **b, char *action)
 	else if (ft_strcmp(action, "ss\n") == 0)
 		ss(a, b);
 	else
-		return(0);
-return (1);
+		return (0);
+	return (1);
 }
 
 int	is_rotate_action(t_stack **a, t_stack **b, char *action)
@@ -45,8 +45,8 @@ int	is_rotate_action(t_stack **a, t_stack **b, char *action)
 	else if (ft_strcmp(action, "rr\n") == 0)
 		rr(a, b);
 	else
-		return(0);
-return (1);
+		return (0);
+	return (1);
 }
 
 int	is_push_action(t_stack **a, t_stack **b, char *action)
@@ -56,8 +56,8 @@ int	is_push_action(t_stack **a, t_stack **b, char *action)
 	else if (ft_strcmp(action, "pb\n") == 0)
 		pb(a, b);
 	else
-		return(0);
-return (1);
+		return (0);
+	return (1);
 }
 
 int	is_rev_rotate_action(t_stack **a, t_stack **b, char *action)
@@ -69,8 +69,6 @@ int	is_rev_rotate_action(t_stack **a, t_stack **b, char *action)
 	else if (ft_strcmp(action, "rrr\n") == 0)
 		rrr(a, b);
 	else
-		return(0);
-return (1);
+		return (0);
+	return (1);
 }
-
-

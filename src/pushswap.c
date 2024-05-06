@@ -1,58 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/06 10:13:23 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 08:54:41 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/checker.h"
+#include "../include/push_swap.h"
 
 int	main(int argc, char *argv[])
 {
 	t_stack	**a;
 	t_stack	**b;
-	int		count;
-	int		*ptr;
+	int		nb_elements;
 
-	ptr = &count;
-	count = 0;
 	if (argc < 2)
-		return (ft_putstr_fd("", 1), 1);
+		return (ft_putstr_fd("Error\n", 1), 1);
 	a = getstack_a(0, argc, argv);
 	if (!a)
 		return (1);
+	nb_elements = ft_lstsizenode(*a) + 1;
 	b = (t_stack **)malloc(sizeof(t_stack));
 	if (!b)
 		return (free_msg(a, b, 1, "Error\n"));
 	*b = NULL;
-	if (checker(a, b, NULL, &ptr))
-		return (free_msg(a, b, 2, ""));
 	if (is_stack_sorted(a))
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
+		return (free_msg(a, b, 2, ""));
+	update_node_id(a);
+	if (nb_elements < 5)
+		sort_three(a, nb_elements);
+	if (nb_elements > 4 && nb_elements < 7)
+		sort_five (a, b, nb_elements);
+	if (nb_elements > 6)
+		sort_big(a, b, nb_elements);
 	return (free_msg(a, b, 2, ""));
-}
-
-int	checker(t_stack **a, t_stack **b, char *action, int **count)
-{
-	int	flag;
-
-	flag = 0;
-	while (!flag)
-	{
-		action = get_next_line(0);
-		if (!(action))
-			flag = 1;
-		action_checker(a, b, action, count);
-		if (action && action[0] && action[0] == '\n')
-			return (ft_printf("Error\n"), 1);
-		ft_free_tab(action);
-	}
-	return (0);
 }
