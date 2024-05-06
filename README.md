@@ -54,8 +54,9 @@ Sorted by the bits in bit shifting function using a mask 0b00000001 <br>
 
 here below is how it works, basically,
 
+![radix](https://github.com/NigeParis/42-push_swap/assets/128382762/14084792-6c6b-4791-a5b2-173582f02394)
 
-![radix](https://github.com/NigeParis/42-push_swap/assets/128382762/6eaa2bc9-0057-4d2a-aad7-1c61f0a668c0)
+
 
 https://github.com/o-reo/push_swap_visualizer
 
