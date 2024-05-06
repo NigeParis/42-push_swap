@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/05 19:25:10 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 08:38:03 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,11 @@ void	del_node(t_stack **stack);
 void	update_node_id(t_stack **stack);
 
 //checker - functions
-int		checker(t_stack **a, t_stack **b, char *action, int flag);
-void	action_checker(t_stack **a, t_stack **b, char *action);
+int		checker(t_stack **a, t_stack **b, char *action, int **count);
+void	action_checker(t_stack **a, t_stack **b, char *action, int **count);
+int		is_swap_action(t_stack **a, t_stack **b, char *action);
+int		is_rotate_action(t_stack **a, t_stack **b, char *action);
+int		is_push_action(t_stack **a, t_stack **b, char *action);
+int		is_rev_rotate_action(t_stack **a, t_stack **b, char *action);
 
 #endif

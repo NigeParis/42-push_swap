@@ -24,7 +24,7 @@ OBJ_DIR=
 
 INCLUDE= -I../usr/include/
 
-SRC=  ./main.c ./checker_input/get_check.c 
+SRC=  ./checker.c ./checker_input/get_check.c 
 SRC+= ./checker_input/check.c ./free_errors.c 
 SRC+= ./checker_input/clean_zeros.c ./checker_input/get_split.c 
 SRC+= ./checker_input/get_stack.c ./checker_input/check_first_arg.c 
@@ -32,6 +32,7 @@ SRC+= ./checker_tools/stack_funtions.c ./checker_tools/rev_rotate_node.c
 SRC+= ./checker_tools/lst_funtions.c ./checker_tools/swap_node.c
 SRC+= ./checker_tools/push_node.c ./checker_tools/rotate_node.c 
 SRC+= ./checker_tools/update_node_id.c ./checker_tools/search_in_node.c
+SRC+= ./checker_actions.c
 
 BONUS_SRC= 
 
