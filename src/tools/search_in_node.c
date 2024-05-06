@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 13:02:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/05 12:31:37 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:03:40 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int	find_min_val(t_stack **a, int argc)
 {
 	unsigned int	i;
 	unsigned int	min;
-	t_stack 		*tmp;
+	t_stack			*tmp;
 
 	tmp = *a;
 	min = UINT32_MAX;
@@ -87,7 +87,7 @@ int	find_min_val(t_stack **a, int argc)
 		{
 			min = tmp->id;
 		}
-		tmp=tmp->next;
+		tmp = tmp->next;
 		i++;
 	}
 	return (min);

@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 15:14:47 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 21:52:57 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 10:43:09 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	is_over_int_limits(char *str)
 		nbr[j] = '\0';
 		if (ft_strlen(nbr) > 9)
 		{
-			chk_nbr = ft_atoi(nbr);
+			chk_nbr = ft_atol(nbr);
 			if (chk_nbr > 2147483647 || chk_nbr < -2147483648)
 				return (1);
 		}
