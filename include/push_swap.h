@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/06 12:05:15 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 14:39:27 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void	update_node_id(t_stack **stack);
 
 //sort - algo
 void	sort_big(t_stack **a, t_stack **b, unsigned int nb_elements);
-void	rdix_sort(t_stack **a, t_stack **b, unsigned int nodes, unsigned int mask);
+void	rdix_sort(t_stack **a, t_stack **b, unsigned int nds, unsigned int msk);
 void	sort_three(t_stack **a, int argc);
 void	sort_five(t_stack **a, t_stack **b, int argc);
 void	get_values_in_stack(t_stack **a, int *p, int stack_size);
