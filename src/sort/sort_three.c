@@ -6,11 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 21:18:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/24 14:40:53 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:10:28 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 void	sort_three(t_stack **stack, int argc)
 {

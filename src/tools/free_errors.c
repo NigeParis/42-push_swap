@@ -6,11 +6,11 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:29:23 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/04/21 17:59:54 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 11:07:24 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "../../include/push_swap.h"
 
 int	free_msg(t_stack **stack_a, t_stack **stack_b, int action, char *msg)
 {

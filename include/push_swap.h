@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/06 10:10:27 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:05:15 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # include "../ft_printf/src/ft_printf.h"
 # include "../get_next_line/get_next_line_bonus.h"
 # define BUFFER 10000
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
 
 typedef struct s_stack
 {
