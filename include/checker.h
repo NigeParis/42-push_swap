@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:05:01 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/06 12:09:21 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:05:29 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int		is_args_double(char *s, char *f);
 int		is_over_int_limits(char *str);
 int		is_sign_error(char *input_str);
 char	**data_parsing(int argc, char *argv[]);
-int		ft_print_data(char **tab_str);
 char	*cleanzero(char *str);
 char	*cleanzero_helper(char *str, char flag, int i, int j);
 void	ft_delzero(char *str, char *buffer, int i, int j);

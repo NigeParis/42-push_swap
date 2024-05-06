@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 08:08:40 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/06 10:13:23 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:59:57 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	checker(t_stack **a, t_stack **b, char *action, int **count)
 			flag = 1;
 		action_checker(a, b, action, count);
 		if (action && action[0] && action[0] == '\n')
-			return (ft_printf("Error\n"), 1);
+			return (ft_putstr_fd("Error\n", 2), 1);
 		ft_free_tab(action);
 	}
 	return (0);
