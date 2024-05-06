@@ -48,6 +48,13 @@ following operations at your disposal:<br>
 
 **rrr** : rra and rrb at the same time.<br>
 
+I used a radix sort method - not the most optimal but its is really stable. <br>
+
+Sorted by the bits in bit shifting function using a mask 0b00000001 <br>
+
+here below is how it works, basically,
+
+
 
 https://github.com/o-reo/push_swap_visualizer
 
