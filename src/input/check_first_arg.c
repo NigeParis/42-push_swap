@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 13:54:07 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/03 15:13:26 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/08 19:15:19 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	check_first_arg(char *input_str)
 
 	i = 0;
 	j = 0;
+	if (!input_str)
+		return ;
 	if (input_str[i] == ' ')
 	{
 		while (input_str && input_str[i] == ' ')
