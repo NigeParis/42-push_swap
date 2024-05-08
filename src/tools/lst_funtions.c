@@ -6,7 +6,7 @@
 /*   By: nrobinso <nrobinso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 10:08:35 by nrobinso          #+#    #+#             */
-/*   Updated: 2024/05/04 15:06:04 by nrobinso         ###   ########.fr       */
+/*   Updated: 2024/05/08 18:54:07 by nrobinso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_stack	*ft_lstnewnode(int content, unsigned int id)
 
 void	ft_lstaddnode_front(t_stack **lst, t_stack *newnode)
 {
-	if (!lst && !newnode)
+	if (!lst || !newnode)
 		return ;
 	newnode->next = *lst;
 	*lst = newnode;
